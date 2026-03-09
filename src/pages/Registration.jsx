@@ -70,7 +70,7 @@ const Registration = () => {
                </div>
                <div className="boutique-card p-8 border-l-4 border-red-600 bg-red-50 text-red-900 shadow-sm">
                   <h4 className="text-sm font-black uppercase tracking-widest mb-2">Note</h4>
-                  <p className="text-xs leading-relaxed font-bold italic">Registration portal will open on September 1st, 2026.</p>
+                  <p className="text-xs leading-relaxed font-bold italic">Registration portal will open on April 1, 2026.</p>
                </div>
             </div>
          </div>

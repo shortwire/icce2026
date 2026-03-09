@@ -7,6 +7,7 @@ import { AdvisoryCommittee, OrganizingCommittee } from './pages/Committees'
 import { CallForPapers, ImportantDates, PaperSubmission } from './pages/Authors'
 import { SupportToStudents } from './pages/SupportToStudents'
 import { Registration, Contact } from './pages/Registration'
+import { RegistrationFees } from './pages/Registration_Fees'
 import Venue from './pages/Venue'
 import ComingSoon from './pages/ComingSoon'
 
@@ -100,7 +101,7 @@ function App() {
             <Route path="/dates" element={<ComingSoon />} />
             <Route path="/submission" element={<ComingSoon />} />
             <Route path="/registration" element={<ComingSoon />} />
-            <Route path="/fees" element={<ComingSoon />} />
+            <Route path="/fees" element={<RegistrationFees />} />
             <Route path="/venue" element={<ComingSoon />} />
             <Route path="/contact" element={<ComingSoon />} />
             <Route path="/about-nsec" element={<ComingSoon />} />
