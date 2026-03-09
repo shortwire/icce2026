@@ -485,7 +485,7 @@ const Home = () => {
     <div className="flex flex-col bg-white overflow-hidden selection:bg-ieee-blue selection:text-white">
       
       {/* 1. PANORAMIC BLENDED HERO - Non-Generic & High End */}
-      <section className="relative min-h-[500px] flex items-start pt-10 md:pt-14 group">
+      <section className="relative min-h-[450px] flex items-start pt-6 md:pt-8 group">
         {/* Blended Background Picture - Local Kolkata Image */}
         <div className="absolute top-0 right-0 bottom-0 left-0 lg:left-1/2 z-0 overflow-hidden pointer-events-none">
            <img 
@@ -506,36 +506,39 @@ const Home = () => {
         <div className="container-boxed grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
           
           {/* Main Title Layer */}
-          <div className="lg:col-span-8 space-y-6">
+          <div className="lg:col-span-8 space-y-4">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
-                <div className="flex items-center space-x-4">
-                  <div className="h-0.5 w-12 bg-ieee-blue"></div>
-                  <span className="text-[12px] font-black uppercase tracking-[0.5em] text-icce-blue">ICCE 2026 • Kolkata</span>
+              <div className="flex flex-col md:flex-row md:items-center gap-x-6 gap-y-2 mb-4">
+                <div className="flex items-center space-x-3 whitespace-nowrap">
+                  <div className="h-0.5 w-8 bg-ieee-blue"></div>
+                  <span className="text-[12px] font-black uppercase tracking-[0.2em] text-icce-blue">ICCE 2026 • Kolkata</span>
                 </div>
                 <div className="hidden md:block h-4 w-px bg-slate-200"></div>
-                <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10">
-                  Technical Co-Sponsorship of IEEE Kolkata Section
+                <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10 whitespace-nowrap">
+                  Technical co-sponsorship by IEEE Kolkata Section and AP/MTT Kolkata Chapter
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-[7.5rem] font-black text-icce-blue leading-[0.8] tracking-tighter uppercase mb-6 drop-shadow-sm">
+              <h1 className="text-5xl md:text-[7.5rem] font-black text-icce-blue leading-[0.8] tracking-tighter uppercase mb-4 drop-shadow-sm">
                 Convergence<br/>
                 <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2.5px #191961' }}>Engineering</span>
               </h1>
               
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-8 pt-2">
-                 <div className="max-w-xs space-y-4">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-8 pt-1">
+                 <div className="max-w-xs space-y-3">
                     <p className="text-sm text-slate-500 font-bold leading-relaxed border-l-4 border-ieee-blue pl-6 py-1">
                        Advancing engineering frontiers through interdisciplinary excellence and IEEE standards.
                     </p>
-                    <div className="flex items-center space-x-2 pl-6">
-                       <ShieldCheck className="text-ieee-blue" size={16} />
-                       <span className="text-[10px] font-black uppercase tracking-widest text-icce-blue">Probable Publication in IEEE Xplore</span>
+                    <div className="flex items-start space-x-3 pl-6">
+                       <ShieldCheck className="text-ieee-blue mt-0.5" size={16} />
+                       <div className="flex flex-col">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-icce-blue leading-none">Probable Publication in IEEE Xplore</span>
+                          <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest leading-tight mt-1.5">Some selected papers will be published in SCI Index Journal</span>
+                       </div>
                     </div>
                  </div>
                  
@@ -724,6 +727,31 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 3. INNOVATIVE TRACK GRID - Two Per Row Boutique Design */}
+      <section className="mt-6 pb-16 bg-white relative">
+        <div className="container-boxed relative z-10">
+           
+           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+              <div className="relative group">
+                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
+                    Conference <br/>
+                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>CORE TRACKS</span>
+                 </h2>
+              </div>
+              <div className="max-w-xs md:text-right">
+                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Technological Horizons</p>
+                 <p className="text-sm font-bold text-slate-500 leading-tight">Explore the diverse interdisciplinary domains covering Computational Informatics to Smart Electronics.</p>
+              </div>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {tracks.map((track, i) => (
+                <TrackCard key={track.id} track={track} i={i} />
+              ))}
+           </div>
+        </div>
+      </section>
+
       {/* 2.5 CONFERENCE HIGHLIGHTS - Professional Micro-Grid */}
       <section className="py-16 bg-white relative overflow-hidden">
         <div className="container-boxed relative z-10">
@@ -767,31 +795,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. INNOVATIVE TRACK GRID - Two Per Row Boutique Design */}
-      <section className="mt-6 pb-16 bg-white relative">
-        <div className="container-boxed relative z-10">
-           
-           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
-              <div className="relative group">
-                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
-                    Conference <br/>
-                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>CORE TRACKS</span>
-                 </h2>
-              </div>
-              <div className="max-w-xs md:text-right">
-                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Technological Horizons</p>
-                 <p className="text-sm font-bold text-slate-500 leading-tight">Explore the diverse interdisciplinary domains covering Computational Informatics to Smart Electronics.</p>
-              </div>
-           </div>
-
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {tracks.map((track, i) => (
-                <TrackCard key={track.id} track={track} i={i} />
-              ))}
-           </div>
-        </div>
-      </section>
-
       {/* 3.5 KEYNOTE SPEAKERS - Boutique Design */}
       <section className="mt-6 pb-24 bg-white relative">
         <div className="container-boxed relative z-10">
@@ -809,10 +812,20 @@ const Home = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {keynoteSpeakers.map((speaker, i) => (
-                <KeynoteSpeakerCard key={i} speaker={speaker} i={i} />
-              ))}
+           <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                 {keynoteSpeakers.map((speaker, i) => (
+                   <KeynoteSpeakerCard key={i} speaker={speaker} i={i} />
+                 ))}
+              </div>
+              
+              {/* Draft Status Overlay */}
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
+                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
+                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
+                 </div>
+              </div>
            </div>
         </div>
       </section>
@@ -834,10 +847,20 @@ const Home = () => {
               </div>
            </div>
 
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 pb-12">
-              {workshops.map((workshop, i) => (
-                <WorkshopCard key={workshop.id} workshop={workshop} i={i} />
-              ))}
+           <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 pb-12">
+                 {workshops.map((workshop, i) => (
+                   <WorkshopCard key={workshop.id} workshop={workshop} i={i} />
+                 ))}
+              </div>
+              
+              {/* Draft Status Overlay */}
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
+                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
+                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
+                 </div>
+              </div>
            </div>
         </div>
       </section>
@@ -1010,8 +1033,8 @@ const Home = () => {
                  <div className="group relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-ieee-blue to-icce-blue rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     <div className="relative bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl flex items-center gap-8">
-                       <div className="shrink-0 w-24 h-24 bg-slate-50 rounded-3xl flex items-center justify-center p-2">
-                          <img src="/assets/sponsor/sponsor_02.png" alt="Technical Sponsor" className="w-full h-full object-contain" />
+                       <div className="shrink-0 w-32 h-32 bg-white rounded-3xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
+                          <img src="/assets/sponsor/sponsor_02.png" alt="Technical Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
                           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-ieee-blue mb-1 block">Technical Sponsor</span>
@@ -1023,8 +1046,8 @@ const Home = () => {
                  <div className="group relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-[40px] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
                     <div className="relative bg-white p-8 rounded-[40px] border border-slate-100 shadow-lg flex items-center gap-8 border-l-4 border-l-yellow-400">
-                       <div className="shrink-0 w-24 h-24 bg-slate-50 rounded-3xl flex items-center justify-center p-2">
-                          <img src="/assets/sponsor/sponsor_08.png" alt="Gold Sponsor" className="w-full h-full object-contain" />
+                       <div className="shrink-0 w-32 h-32 bg-white rounded-3xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
+                          <img src="/assets/sponsor/sponsor_08.png" alt="Gold Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
                           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 mb-1 block">Gold Sponsor</span>
@@ -1040,21 +1063,21 @@ const Home = () => {
                     <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Technical Partners</span>
                     <div className="h-px flex-grow bg-slate-200"></div>
                  </div>
-                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                 <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                     {[
-                      '/assets/sponsor/sponsor_01.webp',
+                      '/assets/sponsor/sponsor_01.png',
                       '/assets/sponsor/sponsor_03.png',
-                      '/assets/sponsor/sponsor_04.webp',
+                      '/assets/sponsor/sponsor_04.png',
                       '/assets/sponsor/sponsor_05.png',
                       '/assets/sponsor/sponsor_06.png',
-                      '/assets/sponsor/sponsor_07.jpg'
+                      '/assets/sponsor/sponsor_07.png'
                     ].map((partner, i) => (
                        <motion.div 
                           key={i}
                           whileHover={{ scale: 1.05 }}
-                          className="bg-white p-3 rounded-3xl shadow-sm hover:shadow-md transition-all flex items-center justify-center aspect-video group border border-slate-100"
+                          className="bg-white p-1 rounded-3xl shadow-sm hover:shadow-md transition-all flex items-center justify-center aspect-video group border border-slate-100"
                        >
-                          <img src={partner} alt={`Partner ${i+1}`} className="w-full h-full object-contain transition-all duration-500" />
+                          <img src={partner} alt={`Partner ${i+1}`} className="w-full h-full object-contain transition-all duration-700" />
                        </motion.div>
                     ))}
                  </div>
