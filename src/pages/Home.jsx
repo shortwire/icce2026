@@ -901,7 +901,7 @@ const Home = () => {
                   <div className="space-y-4 text-slate-500 font-medium">
                      <p className="text-lg text-icce-blue font-bold">Netaji Subhash Engineering College</p>
                      <p className="leading-relaxed text-justify italic text-sm">
-                        Located in Garia, it is well-connected to the main city and international airport, fostering a culture of technical excellence.
+                        Located in Techno City, Panchpota, Garia, it is well-connected to the main city and international airport, fostering a culture of technical excellence.
                      </p>
                   </div>
 
@@ -913,7 +913,7 @@ const Home = () => {
                      <div className="h-10 w-px bg-slate-200"></div>
                      <div className="flex flex-col">
                         <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Campus</span>
-                        <span className="text-sm font-bold text-icce-blue">Techno City, Garia</span>
+                        <span className="text-sm font-bold text-icce-blue">Techno City, Panchpota, Garia, Kolkata, West Bengal, India. PIN: 700 152</span>
                      </div>
                   </div>
 

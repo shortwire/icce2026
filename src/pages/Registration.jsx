@@ -98,7 +98,7 @@ const Contact = () => {
                      <h3 className="text-xl font-black text-[#191961] mb-2 uppercase tracking-tight leading-none">Netaji Subhash Engineering College</h3>
                      <p className="text-sm text-gray-500 font-medium leading-relaxed italic">
                         Techno City, Panchpota, Garia,<br />
-                        Kolkata - 700152, West Bengal, India
+                        Kolkata, West Bengal, India. PIN: 700 152
                      </p>
                      <a href="https://www.nsec.ac.in" target="_blank" className="mt-4 inline-flex items-center text-xs font-black uppercase tracking-widest text-ieee-blue hover:underline">
                         Visit College Website <ExternalLink className="ml-2" size={12} />

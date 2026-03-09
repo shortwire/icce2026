@@ -138,7 +138,7 @@ const Venue = () => {
                     <h4 className="text-sm font-black text-[#191961] uppercase tracking-tight">Address</h4>
                     <p className="text-xs text-gray-500 font-bold italic">
                       Techno City, Panchpota, Garia,<br />
-                      Kolkata - 700152, West Bengal, India
+                      Kolkata, West Bengal, India. PIN: 700 152
                     </p>
                   </div>
                 </div>

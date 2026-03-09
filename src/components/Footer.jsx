@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Column 1: Identity */}
           <div className="lg:col-span-1 space-y-8">
              <div className="flex flex-col">
-                <img src="/assets/logos/icce2026-logo-FINAL.jpg" alt="ICCE 2026" className="h-16 w-auto object-contain mb-4 filter brightness-0 invert" />
+                <img src="/assets/logos/icce2026-logo-FINAL_red.png" alt="ICCE 2026" className="h-16 w-auto object-contain mb-4 filter brightness-0 invert" />
                 <span className="text-xl font-black tracking-tighter text-white leading-tight uppercase">ICCE 2026</span>
                 <span className="text-ieee-blue font-black uppercase tracking-[0.3em] text-[10px]">Kolkata, India</span>
              </div>
@@ -85,7 +85,7 @@ const Footer = () => {
                    <MapPin className="text-ieee-blue shrink-0 mt-0.5" size={16} />
                    <div className="flex flex-col">
                       <span className="text-[9px] uppercase font-black text-gray-500 tracking-widest mb-1">Host Institution</span>
-                      <span className="text-[10px] font-medium text-gray-400 leading-tight">Netaji Subhash Engineering College,<br/>Kolkata - 700152</span>
+                      <span className="text-[10px] font-medium text-gray-400 leading-tight">Techno City, Panchpota, Garia, Kolkata,<br/>West Bengal, India. PIN: 700 152</span>
                    </div>
                 </li>
              </ul>

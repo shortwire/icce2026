@@ -62,9 +62,8 @@ const About = () => (
           <div className="bg-[#191961] p-10 rounded-[30px] text-white space-y-6 shadow-2xl">
              <h3 className="text-xl font-bold uppercase tracking-widest text-ieee-blue">Venue</h3>
              <p className="text-sm text-gray-400 leading-relaxed font-medium">
-                Netaji Subhash Engineering College,<br/>
-                Techno City, Garia, Kolkata,<br/>
-                West Bengal, India - 700152
+                Techno City, Panchpota, Garia,<br/>
+                Kolkata, West Bengal, India. PIN: 700 152
              </p>
              <div className="h-px bg-white/10"></div>
              <h3 className="text-xl font-bold uppercase tracking-widest text-ieee-blue">Dates</h3>

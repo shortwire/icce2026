@@ -117,7 +117,7 @@ const Header = () => {
           {/* Main Identity */}
           <div className="flex items-center space-x-4 md:space-x-6">
             <Link to="/" className="flex-shrink-0">
-              <img src="/assets/logos/icce2026-logo-FINAL.jpg" alt="ICCE 2026" className="h-14 md:h-16" />
+              <img src="/assets/logos/icce2026-logo-FINAL_red.png" alt="ICCE 2026" className="h-14 md:h-16" />
             </Link>
             <div className="border-l border-slate-100 pl-4 md:pl-6">
               <h1 className="text-lg md:text-xl lg:text-[24px] font-black text-icce-blue tracking-tighter leading-none uppercase font-heading">
