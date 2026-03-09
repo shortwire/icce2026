@@ -421,7 +421,9 @@ const TrackCard = ({ track, i }) => {
           <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-400/10 -mr-12 -mt-12 rounded-full blur-2xl group-hover:bg-yellow-400/30 transition-all duration-700"></div>
           
           <div className="flex items-center space-x-3 mb-3">
-             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-ieee-blue opacity-40">Track {i + 1}</span>
+             <Link to={`/topics#track-${track.category.split(' ')[1]}`}>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-ieee-blue opacity-40 hover:opacity-100 transition-opacity">{track.category}</span>
+             </Link>
              <div className="h-px flex-grow bg-slate-100"></div>
           </div>
           
@@ -468,7 +470,7 @@ const TrackCard = ({ track, i }) => {
           </div>
           
           <div className="pt-2 border-t border-slate-50 flex items-center justify-end">
-             <Link to="/topics" className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-icce-blue hover:text-ieee-blue transition-all group/btn">
+             <Link to={`/topics#track-${track.category.split(' ')[1]}`} className="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-icce-blue hover:text-ieee-blue transition-all group/btn">
                 Know More 
                 <div className="ml-2 w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover/btn:bg-yellow-400 group-hover/btn:text-white transition-all">
                    <ArrowRight size={14} />

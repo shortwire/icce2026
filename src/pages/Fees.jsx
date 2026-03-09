@@ -42,10 +42,9 @@ const RegistrationFees = () => {
                 <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>Fees</span>
              </h1>
           </div>
-          <div className="max-w-xl md:text-left">
-             <p className="text-sm font-medium text-slate-600 leading-relaxed">
-               Explore the various registration categories and fee structures for ICCE 2026. We offer special rates for IEEE members, students, and early-bird registrations to encourage diverse participation from academia and industry.
-             </p>
+          <div className="max-w-3xl md:text-right">
+             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Registration Tiers</p>
+             <p className="text-sm font-bold text-slate-500 leading-tight">Our registration structure is designed to be inclusive, offering significant discounts for IEEE members and students to promote widespread engagement. Participants are encouraged to register during the early-bird period to secure their place at this premier engineering event at reduced rates.</p>
           </div>
         </div>
       </header>

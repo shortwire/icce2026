@@ -4,8 +4,18 @@ import { Menu, X, ChevronDown, Home as HomeIcon, ShieldCheck } from 'lucide-reac
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const closeAllMenus = () => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  };
+
+  useEffect(() => {
+    closeAllMenus();
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -78,6 +88,10 @@ const Header = () => {
     { name: 'CONTACT', path: '/contact' },
   ];
 
+  const livePaths = [
+    '/', '/about', '/topics', '/advisory', '/organising', '/tpc', '/publication', '/other-committees', '/submission', '/students', '/fees'
+  ];
+
   return (
     <header className="w-full sticky top-0 z-50 flex flex-col font-sans bg-white shadow-sm">
       {/* 0. STICKY NOTIFICATION BAR */}
@@ -148,26 +162,34 @@ const Header = () => {
           <div className="flex items-center h-10">
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center w-full h-full">
-              <Link to="/" className={`px-4 h-full flex items-center transition-colors ${location.pathname === '/' ? 'bg-icce-blue text-white' : 'text-white hover:bg-icce-blue/50'}`}>
+              <Link to="/" onClick={closeAllMenus} className={`px-4 h-full flex items-center transition-colors relative ${location.pathname === '/' ? 'bg-icce-blue text-white' : 'text-white hover:bg-icce-blue/50'}`}>
                 <HomeIcon size={16} />
+                {livePaths.includes('/') && <div className="absolute bottom-0 left-0 w-full h-1 bg-yellow-400"></div>}
               </Link>
               
               {navItems.map((item) => (
-                <div key={item.name} className="relative group h-full">
+                <div 
+                  key={item.name} 
+                  className="relative h-full"
+                  onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   {item.dropdown ? (
                     <>
-                      <button className="px-4 h-full flex items-center text-[11px] font-black text-white tracking-widest hover:bg-icce-blue/50 transition-all border-r border-white/5 last:border-0">
+                      <button className={`px-4 h-full flex items-center text-[11px] font-black text-white tracking-widest transition-all border-r border-white/5 last:border-0 ${activeDropdown === item.name ? 'bg-icce-blue/50' : 'hover:bg-icce-blue/50'}`}>
                         {item.name}
-                        <ChevronDown size={10} className="ml-1 opacity-50 group-hover:rotate-180 transition-transform" />
+                        <ChevronDown size={10} className={`ml-1 opacity-50 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
                       </button>
                       {/* Boutique Dropdown */}
-                      <div className="absolute left-0 top-full w-56 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] border-t-2 border-ieee-blue">
+                      <div className={`absolute left-0 top-full w-56 bg-white shadow-2xl transition-all duration-300 transform z-[100] border-t-2 border-ieee-blue ${activeDropdown === item.name ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                         {item.dropdown.map((sub) => (
                           <Link 
                             key={sub.name} 
                             to={sub.path} 
-                            className="block px-5 py-2.5 text-[10px] text-gray-600 font-bold uppercase tracking-widest hover:bg-slate-50 hover:text-ieee-blue transition-colors border-b border-gray-50 last:border-0"
+                            onClick={closeAllMenus}
+                            className={`relative block px-5 py-2.5 text-[10px] text-gray-600 font-bold uppercase tracking-widest hover:bg-slate-50 hover:text-ieee-blue transition-colors border-b border-gray-50 last:border-0 ${livePaths.includes(sub.path) ? 'pl-8' : ''}`}
                           >
+                            {livePaths.includes(sub.path) && <div className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-3 bg-yellow-400 rounded-full"></div>}
                             {sub.name}
                           </Link>
                         ))}
@@ -175,8 +197,9 @@ const Header = () => {
                     </>
                   ) : (
                     item.name !== 'Home' && (
-                      <Link to={item.path} className="px-4 h-full flex items-center text-[11px] font-black text-white tracking-widest hover:bg-icce-blue/50 transition-all border-r border-white/5 last:border-0">
+                      <Link to={item.path} onClick={closeAllMenus} className={`px-4 h-full flex items-center text-[11px] font-black text-white tracking-widest hover:bg-icce-blue/50 transition-all border-r border-white/5 last:border-0 relative ${livePaths.includes(item.path) ? 'text-yellow-400' : ''}`}>
                         {item.name}
+                        {livePaths.includes(item.path) && <div className="absolute bottom-0 left-0 w-full h-1 bg-yellow-400"></div>}
                       </Link>
                     )
                   )}
@@ -210,13 +233,15 @@ const Header = () => {
                    {item.dropdown ? (
                       <div className="flex flex-col space-y-3 ml-2">
                         {item.dropdown.map((sub) => (
-                          <Link key={sub.name} to={sub.path} onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors">
+                          <Link key={sub.name} to={sub.path} onClick={closeAllMenus} className="text-gray-300 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-3">
+                            {livePaths.includes(sub.path) && <div className="w-1 h-3 bg-yellow-400 rounded-full"></div>}
                             {sub.name}
                           </Link>
                         ))}
                       </div>
                    ) : (
-                     <Link to={item.path} onClick={() => setIsOpen(false)} className="text-white text-xs font-black uppercase tracking-widest ml-2">
+                     <Link to={item.path} onClick={closeAllMenus} className="text-white text-xs font-black uppercase tracking-widest ml-2 flex items-center gap-3">
+                        {livePaths.includes(item.path) && <div className="w-1 h-3 bg-yellow-400 rounded-full"></div>}
                         {item.name}
                      </Link>
                    )}

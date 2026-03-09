@@ -104,10 +104,9 @@ const SupportToStudents = () => {
                 <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>To Students</span>
              </h1>
           </div>
-          <div className="max-w-xl md:text-right">
-             <p className="text-sm font-medium text-slate-600 leading-relaxed">
-               We are committed to supporting student participants to ensure a meaningful and enriching conference experience. Various forms of assistance are available to help students engage with the conference activities, present their research, and interact with global experts.
-             </p>
+          <div className="max-w-3xl md:text-right">
+             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Student Empowerment</p>
+             <p className="text-sm font-bold text-slate-500 leading-tight">We are deeply committed to fostering student researchers through a comprehensive program including travel grants, discounted registration, and mentorship with global leaders. We encourage all student participants to leverage these unique opportunities to advance their professional and research careers.</p>
           </div>
         </div>
       </header>
@@ -161,7 +160,6 @@ const SupportToStudents = () => {
                      className={`p-5 rounded-2xl border border-slate-100 bg-white shadow-sm hover:border-ieee-blue/20 hover:shadow-md transition-all ${opt.id === "5" ? "md:col-span-2" : ""}`}
                    >
                      <div className="flex items-start gap-3">
-                        <span className="text-xl font-black text-slate-100">{opt.id}</span>
                         <div className="space-y-2 flex-1">
                            <h3 className="text-[13px] font-black text-[#191961] uppercase tracking-tight leading-tight group-hover:text-ieee-blue transition-colors">
                               {opt.title}
@@ -229,7 +227,7 @@ const SupportToStudents = () => {
                  </div>
                  <div className="space-y-4">
                     <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Interested students should:</p>
-                    <div className="space-y-3">
+                       {/* How to Apply steps */}
                        {[
                          "Complete conference registration",
                          "Submit required documents (if applying for grants)",
@@ -237,11 +235,9 @@ const SupportToStudents = () => {
                          "Wait for confirmation from the organizing committee"
                        ].map((step, i) => (
                          <div key={i} className="flex gap-3 items-start group">
-                            <span className="text-lg font-black text-yellow-400/50 leading-none group-hover:text-yellow-500 transition-colors">{i+1}</span>
                             <p className="text-[11px] font-bold text-slate-600 leading-tight pt-0.5">{step}</p>
                          </div>
                        ))}
-                    </div>
                  </div>
               </section>
 

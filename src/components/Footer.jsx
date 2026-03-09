@@ -31,9 +31,9 @@ const Footer = () => {
              </p>
              <div className="flex space-x-3">
                 {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-                  <a key={i} href="#" className="w-8 h-8 bg-white/5 hover:bg-ieee-blue transition-all rounded-lg flex items-center justify-center border border-white/10 group">
+                  <Link key={i} to="/" className="w-8 h-8 bg-white/5 hover:bg-ieee-blue transition-all rounded-lg flex items-center justify-center border border-white/10 group">
                      <Icon size={14} className="group-hover:scale-110 transition-transform" />
-                  </a>
+                  </Link>
                 ))}
              </div>
           </div>

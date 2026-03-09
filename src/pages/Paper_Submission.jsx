@@ -11,39 +11,34 @@ import {
   FileText,
   ShieldCheck,
   Star,
-  Info
+  Info,
+  Link as LinkIcon
 } from 'lucide-react';
 
 const Submission = () => {
-  const resources = [
-    {
-      id: "1",
-      title: "IEEE Conference Template (MS Word)",
-      description: "Download the standard MS Word template from IEEE.",
-      link: "https://www.ieee.org/conferences/publishing/templates.html",
-      type: "external"
-    },
-    {
-      id: "2",
-      title: "IEEE Conference Template (LaTeX)",
-      description: "Access the LaTeX template on IEEE's portal.",
-      link: "https://www.ieee.org/conferences/publishing/templates.html",
-      type: "external"
-    }
-  ];
-
   const reviewPolicies = [
-     "All submissions will be checked for plagiarism.",
-     "Each paper will be reviewed by at least two independent reviewers.",
-     "Acceptance based on originality, quality, relevance, and clarity.",
-     "Accepted papers must be registered and presented for inclusion."
+    "All submissions will be checked for plagiarism.",
+    "Each paper will be reviewed by at least two independent reviewers.",
+    "Acceptance will be based on originality, technical quality, relevance, and clarity.",
+    "Authors of accepted papers must register and present their work at the conference for inclusion in the proceedings."
   ];
 
   const instructions = [
-    "Submit only original, unpublished work.",
-    "At least one author must register for the conference.",
-    "Non-presented papers will not be in the proceedings.",
-    "Manuscripts must comply with IEEE formatting."
+    "Submit only original, unpublished work that is not under consideration elsewhere.",
+    "At least one author of each accepted paper must register for the conference.",
+    "Papers not presented at the conference will not be included in the proceedings.",
+    "Authors should ensure that their manuscripts comply with IEEE formatting requirements."
+  ];
+
+  const resources = [
+    {
+      title: "IEEE Conference Template (MS Word)",
+      link: "https://www.ieee.org/conferences/publishing/templates.html"
+    },
+    {
+      title: "IEEE Conference Template (LaTeX)",
+      link: "https://www.ieee.org/conferences/publishing/templates.html"
+    }
   ];
 
   return (
@@ -60,193 +55,189 @@ const Submission = () => {
                 <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>Submission</span>
              </h1>
           </div>
-          <div className="max-w-xl md:text-right">
-             <p className="text-sm font-medium text-slate-600 leading-relaxed">
-               The Organizing Committee of ICCE 2026 cordially invites researchers, academicians, industry professionals, and students to submit their original and unpublished research work to the International Conference for Convergence in Engineering (ICCE 2026).
-             </p>
+          <div className="max-w-3xl md:text-right">
+             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Submission Standards</p>
+             <p className="text-sm font-bold text-slate-500 leading-tight">The Organizing Committee of ICCE 2026 cordially invites researchers, academicians, industry professionals, and students to submit their original and unpublished research contributions to the International Conference for Convergence in Engineering (ICCE 2026).</p>
           </div>
         </div>
       </header>
 
       <main className="container-boxed pt-4 pb-12 px-6">
         
-        {/* --- IMPORTANT DATES (Compact) --- */}
+        {/* --- INTRODUCTION --- */}
         <section className="mb-10">
-           <div className="flex items-center gap-3 mb-4">
-              <div className="p-1.5 bg-blue-50 rounded-lg">
-                <Clock size={16} className="text-ieee-blue" />
-              </div>
-              <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Submission Deadlines</h2>
-              <div className="h-px flex-1 bg-slate-100"></div>
-           </div>
-           <div className="flex flex-col md:flex-row justify-between gap-3 bg-slate-50/50 p-5 rounded-3xl border border-slate-50 shadow-sm">
-              <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-                 <span className="text-[9px] font-black text-ieee-blue uppercase tracking-widest">Submission Deadline</span>
-                 <p className="text-sm font-black text-[#191961]">July 15, 2026 (Firm)</p>
-              </div>
-              <div className="hidden md:block w-px h-8 bg-slate-200 self-center"></div>
-              <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-                 <span className="text-[9px] font-black text-ieee-blue uppercase tracking-widest">Notification of Acceptance</span>
-                 <p className="text-sm font-black text-[#191961]">August 31, 2026</p>
-              </div>
-              <div className="hidden md:block w-px h-8 bg-slate-200 self-center"></div>
-              <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-                 <span className="text-[9px] font-black text-ieee-blue uppercase tracking-widest">Camera Ready Submission</span>
-                 <p className="text-sm font-black text-[#191961]">September 10, 2026</p>
-              </div>
-           </div>
+           <p className="text-sm font-medium text-slate-500 leading-relaxed text-justify italic">
+             The conference aims to provide a premier interdisciplinary platform for presenting innovative research and developments across various domains of engineering and technology.
+           </p>
         </section>
 
-        {/* --- CONTENT GRID --- */}
-        <div className="flex flex-col lg:flex-row gap-10 mb-10">
+        <div className="flex flex-col lg:flex-row gap-10">
            
            {/* LEFT COLUMN */}
-           <div className="flex-grow lg:max-w-[68%] space-y-8">
-              {/* Submission Portal Section */}
+           <div className="flex-grow lg:max-w-[65%] space-y-10">
+              
+              {/* Submission System */}
               <section>
-                <div className="flex items-center gap-4 mb-6">
-                   <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Submission System</h2>
-                   <div className="h-px flex-1 bg-slate-100"></div>
-                </div>
-                
-                <motion.div 
-                   initial={{ opacity: 0, y: 10 }}
-                   whileInView={{ opacity: 1, y: 0 }}
-                   viewport={{ once: true }}
-                   className="p-8 rounded-3xl border border-slate-100 bg-slate-50/30 relative overflow-hidden group"
-                >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-ieee-blue/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
-                  <div className="space-y-6">
-                    <p className="text-sm font-medium text-slate-600 leading-relaxed italic text-justify">
-                      Authors must submit their manuscripts electronically through the Microsoft CMT (Conference Management Toolkit) online submission system. Submissions sent via email will not be accepted.
+                 <div className="flex items-center gap-4 mb-6">
+                    <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Submission System</h2>
+                    <div className="h-px flex-1 bg-slate-100"></div>
+                 </div>
+                 <div className="p-6 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition-all">
+                    <p className="text-xs font-bold text-slate-600 leading-relaxed mb-6">
+                      Authors must submit their manuscripts electronically through the Microsoft CMT (Conference Management Toolkit) online submission system.
                     </p>
-                    <div className="flex flex-wrap items-center gap-4">
-                      <a 
-                        href="https://cmt3.research.microsoft.com/ICCE2026" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-8 py-3.5 bg-ieee-blue text-white font-black uppercase tracking-widest text-[10px] rounded-full hover:bg-[#191961] transition-all shadow-lg hover:shadow-ieee-blue/20"
-                      >
-                         📌 Paper Submission Link <ExternalLink className="ml-2" size={14} />
-                      </a>
+                    <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                       <div className="flex items-center gap-3 mb-4">
+                          <LinkIcon size={18} className="text-ieee-blue" />
+                          <h3 className="text-[13px] font-black text-[#191961] uppercase tracking-tight">Paper Submission Link</h3>
+                       </div>
+                       <a 
+                         href="https://cmt3.research.microsoft.com/ICCE2026" 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         className="text-xs font-black text-ieee-blue hover:text-[#191961] transition-colors break-all"
+                       >
+                         https://cmt3.research.microsoft.com/ICCE2026
+                       </a>
                     </div>
-
-                    {/* Review Policy & Support Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-100">
-                        {/* Review Policy */}
-                        <div className="bg-[#191961] p-5 rounded-2xl text-white shadow-md relative overflow-hidden">
-                            <div className="flex items-center gap-2 mb-3">
-                                <ShieldCheck size={16} className="text-yellow-400" />
-                                <h3 className="text-[11px] font-black uppercase tracking-tight">Review Process</h3>
-                            </div>
-                            <ul className="space-y-1.5">
-                                {reviewPolicies.map((policy, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-[10px] font-bold text-slate-300">
-                                        <ArrowRightCircle size={10} className="text-yellow-400 shrink-0 mt-0.5" />
-                                        <span className="leading-tight">{policy}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Submission Support */}
-                        <div className="bg-slate-900 p-5 rounded-2xl text-white shadow-md">
-                            <div className="flex items-center gap-2 mb-3">
-                                <Mail size={16} className="text-yellow-400" />
-                                <h3 className="text-[11px] font-black uppercase tracking-tight">Submission Support</h3>
-                            </div>
-                            <div className="space-y-2">
-                                <div className="flex flex-col">
-                                    <span className="text-[9px] uppercase text-slate-500 font-black tracking-widest">Email</span>
-                                    <a href="mailto:icce2026@nsec.ac.in" className="text-[11px] font-black text-yellow-400 hover:text-white transition-colors">icce2026@nsec.ac.in</a>
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="text-[9px] uppercase text-slate-500 font-black tracking-widest">Phone</span>
-                                    <a href="tel:+919831817307" className="text-[11px] font-black text-white hover:text-yellow-400 transition-colors">+91 9831817307</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </motion.div>
+                    <p className="mt-4 text-[10px] font-black text-red-600 uppercase tracking-widest italic bg-red-50 px-3 py-1.5 rounded-lg inline-block">
+                       Submissions sent via email will not be accepted.
+                    </p>
+                 </div>
               </section>
+
+              {/* Paper Preparation Guidelines */}
+              <section>
+                 <div className="flex items-center gap-4 mb-6">
+                    <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Paper Preparation Guidelines</h2>
+                    <div className="h-px flex-1 bg-slate-100"></div>
+                 </div>
+                 <div className="space-y-6">
+                    <p className="text-xs font-bold text-slate-600 leading-relaxed">
+                      Authors are requested to prepare their manuscripts following the standard IEEE conference format. Papers must be written in English and should typically be <strong>4–6 pages</strong>, including figures, tables, and references.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                       {resources.map((res, idx) => (
+                         <div key={idx} className="p-5 rounded-2xl border border-slate-100 bg-white shadow-sm hover:border-ieee-blue/20 hover:shadow-md transition-all flex items-start gap-4">
+                            <div className="w-10 h-10 bg-blue-50 text-ieee-blue rounded-xl flex items-center justify-center shrink-0">
+                               <Download size={20} />
+                            </div>
+                            <div className="space-y-2 flex-1">
+                               <h3 className="text-[12px] font-black text-[#191961] uppercase tracking-tight leading-tight">
+                                  {res.title}
+                               </h3>
+                               <a href={res.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[9px] font-black text-ieee-blue uppercase tracking-widest hover:translate-x-1 transition-transform">
+                                  Template Link <ExternalLink size={10} className="ml-1" />
+                               </a>
+                            </div>
+                         </div>
+                       ))}
+                    </div>
+                 </div>
+              </section>
+
+              {/* Important Instructions for Authors */}
+              <section>
+                 <div className="flex items-center gap-4 mb-6">
+                    <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Important Instructions for Authors</h2>
+                    <div className="h-px flex-1 bg-slate-100"></div>
+                 </div>
+                 <div className="p-6 rounded-3xl border border-slate-100 bg-white shadow-sm">
+                    <ul className="space-y-4">
+                       {instructions.map((item, i) => (
+                         <li key={i} className="flex items-start gap-3 text-[11px] font-bold text-gray-600 leading-snug">
+                            <ArrowRightCircle size={14} className="text-ieee-blue shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                         </li>
+                       ))}
+                    </ul>
+                 </div>
+              </section>
+
            </div>
 
            {/* RIGHT COLUMN (Sidebar) */}
-           <div className="lg:w-[32%] space-y-4">
-              {/* Important Instructions */}
-              <section className="p-6 border border-slate-100 rounded-3xl bg-slate-50/30">
-                 <div className="flex items-center gap-2 mb-4 text-[#191961]">
-                    <Info size={18} className="text-yellow-600" />
-                    <h3 className="text-sm font-black uppercase tracking-tight">Important Instructions</h3>
+           <div className="lg:w-[35%] space-y-6">
+              
+              {/* Review Process */}
+              <section className="bg-[#191961] p-6 rounded-3xl text-white shadow-lg relative overflow-hidden">
+                 <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-400/10 rounded-bl-full"></div>
+                 <div className="flex items-center gap-2 mb-6 relative z-10 border-b border-white/10 pb-4">
+                    <ShieldCheck size={18} className="text-yellow-400" />
+                    <h3 className="text-sm font-black uppercase tracking-tight">Review Process</h3>
                  </div>
-                 <div className="space-y-4">
-                    {instructions.map((step, i) => (
-                      <div key={i} className="flex gap-3 items-start group">
-                         <div className="w-5 h-5 rounded-full bg-blue-50 text-ieee-blue flex items-center justify-center shrink-0 text-[10px] font-black group-hover:bg-ieee-blue group-hover:text-white transition-colors">
-                            {i+1}
-                         </div>
-                         <p className="text-[11px] font-bold text-slate-600 leading-tight pt-0.5">{step}</p>
-                      </div>
-                    ))}
+                 <div className="space-y-6 relative z-10">
+                    <ul className="space-y-4">
+                       {reviewPolicies.map((policy, i) => (
+                         <li key={i} className="flex items-start gap-3 text-[11px] font-bold text-slate-200 leading-snug border-b border-white/5 pb-3 last:border-0">
+                            <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0 mt-1.5"></div>
+                            <span>{policy}</span>
+                         </li>
+                       ))}
+                    </ul>
                  </div>
               </section>
 
-              {/* Publication Notice */}
-              <section className="p-6 rounded-3xl bg-blue-50/50 border border-blue-100 space-y-4">
-                <div className="flex items-center gap-2 text-ieee-blue">
-                   <ShieldCheck size={18} />
-                   <h3 className="text-xs font-black uppercase tracking-tight">Publication</h3>
-                </div>
-                <p className="text-[10px] font-bold text-slate-600 leading-relaxed italic">
-                   All submitted papers will undergo a rigorous peer-review process. Selected high-quality accepted papers may be submitted for possible publication in the <strong>IEEE Xplore Digital Library</strong>, subject to meeting the scope and quality requirements of IEEE.
-                </p>
-                <div className="bg-white/50 p-2 rounded-lg border border-ieee-blue/10">
-                   <p className="text-[9px] font-black text-ieee-blue uppercase tracking-tighter">IEEE approval is under process / subject to final confirmation.</p>
-                </div>
+              {/* Publication */}
+              <section className="p-6 border border-slate-100 rounded-3xl bg-slate-50/30">
+                 <div className="flex items-center gap-2 mb-4 text-[#191961]">
+                    <FileText size={18} className="text-yellow-600" />
+                    <h3 className="text-sm font-black uppercase tracking-tight">Publication</h3>
+                 </div>
+                 <div className="space-y-4">
+                    <p className="text-[11px] font-bold text-slate-600 leading-relaxed text-justify italic">
+                      All submitted papers will undergo a rigorous peer-review process by the Technical Program Committee and domain experts. 
+                    </p>
+                    <p className="text-[11px] font-bold text-slate-600 leading-relaxed text-justify">
+                      Selected high-quality accepted papers may be submitted for possible publication in the <strong>IEEE Xplore Digital Library</strong>, subject to meeting the scope and quality requirements of IEEE.
+                    </p>
+                    <div className="bg-white/50 p-4 rounded-2xl border border-ieee-blue/10">
+                       <p className="text-[10px] font-black text-ieee-blue uppercase tracking-tight leading-tight">
+                         IEEE approval is under process / subject to final confirmation.
+                       </p>
+                    </div>
+                 </div>
               </section>
+
+              {/* Contact Support */}
+              <section className="bg-slate-900 p-6 rounded-3xl text-white border-b-4 border-yellow-400">
+                 <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+                    <Mail size={18} className="text-yellow-400" />
+                    <h3 className="text-sm font-black uppercase tracking-tight">Submission Support</h3>
+                 </div>
+                 <div className="space-y-4">
+                    <div className="space-y-3">
+                       <div className="flex flex-col gap-0.5">
+                          <span className="text-[9px] uppercase text-slate-500 font-black tracking-widest">Email</span>
+                          <a href="mailto:icce2026@nsec.ac.in" className="text-xs font-black text-yellow-400 hover:text-white transition-colors">icce2026@nsec.ac.in</a>
+                       </div>
+                       <div className="flex flex-col gap-0.5">
+                          <span className="text-[9px] uppercase text-slate-500 font-black tracking-widest">Phone</span>
+                          <a href="tel:+919831817307" className="text-xs font-black text-white hover:text-yellow-400 transition-colors">+91 9831817307</a>
+                       </div>
+                    </div>
+                 </div>
+              </section>
+
            </div>
         </div>
 
-        {/* Paper Preparation Guidelines Section - Moved Full Width */}
-        <section className="mt-12">
-            <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Paper Preparation Guidelines</h2>
-                <div className="h-px flex-1 bg-slate-100"></div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm mb-6">
-                <p className="text-sm font-medium text-slate-600 leading-relaxed">
-                    Authors are requested to prepare their manuscripts following the standard IEEE conference format. Papers must be written in English and should typically be <strong>4–6 pages</strong>, including figures, tables, and references.
-                </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {resources.map((res) => (
-                    <motion.div 
-                    key={res.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="p-5 rounded-2xl border border-slate-100 bg-white shadow-sm hover:border-ieee-blue/20 hover:shadow-md transition-all flex items-start gap-4"
-                    >
-                    <div className="w-10 h-10 bg-blue-50 text-ieee-blue rounded-xl flex items-center justify-center shrink-0">
-                        <FileText size={20} />
-                    </div>
-                    <div className="space-y-1 flex-1">
-                        <h3 className="text-[12px] font-black text-[#191961] uppercase tracking-tight leading-tight">
-                            {res.title}
-                        </h3>
-                        <p className="text-[10px] font-medium text-slate-500 leading-snug">
-                            {res.description}
-                        </p>
-                        <a href={res.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[9px] font-black text-ieee-blue uppercase tracking-widest mt-2 hover:translate-x-1 transition-transform">
-                            Template Link <ExternalLink size={10} className="ml-1" />
-                        </a>
-                    </div>
-                    </motion.div>
-                ))}
-            </div>
+        {/* Acknowledgment — Microsoft CMT */}
+        <section className="mt-12 pt-8 border-t border-slate-100">
+           <div className="flex items-center gap-3 mb-6">
+              <Info size={16} className="text-slate-400" />
+              <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Acknowledgment — Microsoft CMT</h2>
+              <div className="h-px flex-1 bg-slate-100"></div>
+           </div>
+           <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 space-y-4 shadow-sm">
+              <p className="text-xs font-medium text-slate-500 leading-relaxed text-justify italic">
+                The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+              </p>
+              <p className="text-sm font-black text-icce-blue leading-relaxed text-justify">
+                The organizers gratefully acknowledge the support provided by Microsoft through the Microsoft Conference Management Toolkit (CMT) service for managing the paper submission and review process.
+              </p>
+           </div>
         </section>
 
       </main>
