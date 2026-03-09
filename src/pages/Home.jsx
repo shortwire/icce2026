@@ -515,7 +515,7 @@ const Home = () => {
               <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
                 <div className="flex items-center space-x-4">
                   <div className="h-0.5 w-12 bg-ieee-blue"></div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-icce-blue">ICCE 2026 • Kolkata</span>
+                  <span className="text-[12px] font-black uppercase tracking-[0.5em] text-icce-blue">ICCE 2026 • Kolkata</span>
                 </div>
                 <div className="hidden md:block h-4 w-px bg-slate-200"></div>
                 <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10">
@@ -605,13 +605,13 @@ const Home = () => {
                                    className="absolute inset-0 rounded-full bg-yellow-400 -m-2 blur-sm"
                                 />
                              ) : null}
-                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-4 border-white shadow-lg transition-all duration-500 z-10 relative ${i === 0 ? 'bg-yellow-400 text-icce-blue' : 'bg-white text-slate-300 group-hover:bg-ieee-blue group-hover:text-white'}`}>
-                                <span className="text-[11px] font-black">{i + 1}</span>
+                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-4 border-white shadow-lg transition-all duration-500 z-10 relative ${i === 0 ? 'bg-yellow-400 text-icce-blue' : 'bg-white text-slate-500 group-hover:bg-ieee-blue group-hover:text-white'}`}>
+                                <span className="text-[14px] font-black">{i + 1}</span>
                              </div>
                           </div>
                           
                           <div className="space-y-1 px-2">
-                             <span className={`text-[8px] font-black uppercase tracking-widest block min-h-[20px] leading-tight ${i === 0 ? 'text-ieee-blue' : 'text-slate-400'}`}>
+                             <span className={`text-[10px] font-black uppercase tracking-widest block min-h-[20px] leading-tight ${i === 0 ? 'text-ieee-blue' : 'text-slate-600'}`}>
                                 {item.label}
                              </span>
                              <span className="text-xl md:text-2xl font-black text-icce-blue tracking-tighter italic leading-none block group-hover:scale-105 transition-transform">
@@ -653,7 +653,7 @@ const Home = () => {
                  
                  <div className="space-y-4">
                     <p className="text-lg md:text-xl text-slate-800 leading-tight font-black italic pl-2 py-1">
-                       Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTT Kolkata and IEEE Kolkata Section, organizes the 2nd International Conference on Convergence in Engineering.
+                       Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTT Kolkata and IEEE Kolkata Section, organizes the 2nd International Conference for Convergence in Engineering.
                     </p>
                     <div className="text-[11px] text-slate-500 leading-relaxed font-bold text-justify columns-1 md:columns-2 gap-8 pt-2">
                        <p>

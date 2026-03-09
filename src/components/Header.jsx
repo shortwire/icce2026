@@ -79,7 +79,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full z-50 flex flex-col font-sans">
+    <header className="w-full sticky top-0 z-50 flex flex-col font-sans bg-white shadow-sm">
       {/* 0. STICKY NOTIFICATION BAR */}
       <div className="w-full bg-ieee-blue text-white py-1.5 overflow-hidden sticky top-0 z-[60]">
         <div className="container-boxed flex justify-center items-center px-4">
@@ -121,7 +121,7 @@ const Header = () => {
             </Link>
             <div className="border-l border-slate-100 pl-4 md:pl-6">
               <h1 className="text-lg md:text-xl lg:text-[24px] font-black text-icce-blue tracking-tighter leading-none uppercase font-heading">
-                International Conference for<br className="hidden md:block"/> Convergence in Engineering
+                2nd International Conference for<br className="hidden md:block"/> Convergence in Engineering
               </h1>
 
             </div>

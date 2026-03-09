@@ -35,7 +35,7 @@ const About = () => (
        <div className="lg:col-span-2 space-y-12">
           <div className="prose prose-lg max-w-none text-gray-500 leading-relaxed text-justify italic">
              <p>
-                Netaji Subhash Engineering College (NSEC), in collaboration with the IEEE AP-MTT Kolkata Chapter and with Technical Co-Sponsorship from the IEEE Kolkata Section, is proud to organize the 2nd International Conference on Convergence in Engineering (ICCE 2026).
+                Netaji Subhash Engineering College (NSEC), in collaboration with the IEEE AP-MTT Kolkata Chapter and with Technical Co-Sponsorship from the IEEE Kolkata Section, is proud to organize the 2nd International Conference for Convergence in Engineering (ICCE 2026).
              </p>
           </div>
           <div className="space-y-8">

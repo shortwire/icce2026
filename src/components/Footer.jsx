@@ -27,7 +27,7 @@ const Footer = () => {
                 <span className="text-ieee-blue font-black uppercase tracking-[0.3em] text-[10px]">Kolkata, India</span>
              </div>
              <p className="text-[11px] text-gray-400 leading-relaxed text-justify italic font-medium">
-                The 2nd International Conference on Convergence in Engineering (ICCE 2026) provides a global platform for interdisciplinary research in emerging engineering domains.
+                The 2nd International Conference for Convergence in Engineering (ICCE 2026) provides a global platform for interdisciplinary research in emerging engineering domains.
              </p>
              <div className="flex space-x-3">
                 {[Facebook, Twitter, Linkedin].map((Icon, i) => (
