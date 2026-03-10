@@ -85,11 +85,10 @@ const Header = () => {
       ]
     },
     { name: 'VENUE', path: '/venue' },
-    { name: 'CONTACT', path: '/contact' },
   ];
 
   const livePaths = [
-    '/', '/about', '/topics', '/advisory', '/organising', '/tpc', '/publication', '/other-committees', '/submission', '/students', '/fees'
+    '/', '/about', '/about-nsec', '/about-kolkata', '/topics', '/advisory', '/organising', '/tpc', '/publication', '/other-committees', '/submission', '/students', '/fees', '/contact'
   ];
 
   return (

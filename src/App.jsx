@@ -14,10 +14,13 @@ import { CallForPapers, ImportantDates } from './pages/Authors'
 import Submission from './pages/Paper_Submission'
 import Topics from './pages/Topics'
 import { SupportToStudents } from './pages/SupportToStudents'
-import { Registration, Contact } from './pages/Registration'
+import { Registration } from './pages/Registration'
+import Contact from './pages/Contact'
 import { RegistrationFees } from './pages/Fees'
 import Venue from './pages/Venue'
 import ComingSoon from './pages/ComingSoon'
+import AboutNSEC from './pages/AboutNSEC'
+import AboutKolkata from './pages/AboutKolkata'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,9 +50,9 @@ function App() {
             <Route path="/registration" element={<ComingSoon />} />
             <Route path="/fees" element={<RegistrationFees />} />
             <Route path="/venue" element={<ComingSoon />} />
-            <Route path="/contact" element={<ComingSoon />} />
-            <Route path="/about-nsec" element={<ComingSoon />} />
-            <Route path="/about-kolkata" element={<ComingSoon />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about-nsec" element={<AboutNSEC />} />
+            <Route path="/about-kolkata" element={<AboutKolkata />} />
             <Route path="/tpc" element={<TPC />} />
             <Route path="/publication" element={<Publication />} />
             <Route path="/other-committees" element={<OtherCommittees />} />

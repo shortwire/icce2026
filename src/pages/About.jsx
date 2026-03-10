@@ -94,7 +94,7 @@ const About = () => {
                     <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Conference Objectives</h2>
                     <div className="h-px flex-1 bg-slate-100"></div>
                  </div>
-                 <div className="grid grid-cols-1 gap-3">
+                 <div className="grid grid-cols-1 gap-1.5">
                     {objectives.map((obj, idx) => (
                       <motion.div 
                         key={idx}
@@ -102,7 +102,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-ieee-blue/20 transition-all group"
+                        className="flex items-start gap-4 py-1.5 px-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-ieee-blue/20 transition-all group"
                       >
                         <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0 group-hover:bg-ieee-blue transition-colors">
                            <CheckCircle2 size={16} className="text-ieee-blue group-hover:text-white transition-colors" />
