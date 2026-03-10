@@ -111,7 +111,7 @@ const Header = () => {
 
       {/* 1. SUBTLE TOP UTILITY BAR (Very compact) */}
       <div className="w-full bg-[#f8f9fa] border-b border-gray-100 py-1 text-[9px] text-gray-400 font-bold uppercase tracking-widest">
-        <div className="max-w-[1200px] mx-auto flex justify-center md:justify-start items-center space-x-4 px-4">
+        <div className="max-w-[1400px] mx-auto flex justify-center md:justify-start items-center space-x-4 px-4">
           <a href="https://www.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE.org</a>
           <span className="text-gray-200">|</span>
           <a href="https://ieeexplore.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE <i>Xplore</i></a>
@@ -127,14 +127,14 @@ const Header = () => {
 
       {/* 2. BOUTIQUE LOGO SECTION (Thin & High Density) */}
       <div className="w-full bg-white py-2 md:py-3 border-b border-slate-50">
-        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4 md:gap-0">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4 md:gap-0">
           {/* Main Identity */}
           <div className="flex items-center space-x-4 md:space-x-6">
             <Link to="/" className="flex-shrink-0">
-              <img src="/assets/logos/icce2026-logo-FINAL_red.png" alt="ICCE 2026" className="h-14 md:h-16" />
+              <img src="/assets/logos/icce2026-logo-FINAL_red.png?v=1.0.1" alt="ICCE 2026" className="h-14 md:h-16" />
             </Link>
             <div className="border-l border-slate-100 pl-4 md:pl-6">
-              <h1 className="text-lg md:text-xl lg:text-[24px] font-black text-icce-blue tracking-tighter leading-none uppercase font-heading">
+              <h1 className="text-lg md:text-xl lg:text-[22px] font-black text-icce-blue tracking-tighter leading-none uppercase font-heading">
                 2nd International Conference for<br className="hidden md:block"/> Convergence in Engineering
               </h1>
 
@@ -142,15 +142,23 @@ const Header = () => {
           </div>
 
           {/* Partner Logos Horizontal Array (Aligned precisely to image) */}
-          <div className="flex items-center space-x-6 md:space-x-10 shrink-0">
-             <img src="/assets/logos/ieee-ap-mtt.png" alt="IEEE AP-MTT" className="h-10 md:h-12 object-contain" />
-             <div className="h-10 w-px bg-slate-100"></div>
-             <img src="/assets/logos/iqac.png" alt="IQAC NSEC" className="h-10 md:h-12 object-contain" />
-             <div className="h-10 w-px bg-slate-100"></div>
+          <div className="flex items-center space-x-3 md:space-x-4 lg:space-x-6 shrink-0 h-9 md:h-12">
+             <div className="h-full flex items-center justify-center">
+                <img src="/assets/logos/ieee-ap-mtt.png?v=1.0.1" alt="IEEE AP-MTT" className="max-h-full w-auto object-contain" />
+             </div>
+             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
+             <div className="h-full flex items-center justify-center">
+                <img src="/assets/logos/IEEE_Kolkata_Section_logo.png?v=1.0.1" alt="IEEE Kolkata Section" className="max-h-full w-auto object-contain" />
+             </div>
+             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
+             <div className="h-full flex items-center justify-center">
+                <img src="/assets/logos/iqac.png?v=1.0.1" alt="IQAC NSEC" className="max-h-full w-auto object-contain" />
+             </div>
+             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
              
              {/* New Combined TIG Logo Image */}
-             <div className="flex flex-col items-center">
-                <img src="/assets/logos/nsec.jpg" alt="TIG & NSEC Initiative" className="h-10 md:h-12 object-contain" />
+             <div className="h-full flex items-center justify-center">
+                <img src="/assets/logos/nsec.jpg?v=1.0.1" alt="TIG & NSEC Initiative" className="max-h-full w-auto object-contain" />
              </div>
           </div>
         </div>
@@ -158,7 +166,7 @@ const Header = () => {
 
       {/* 3. PRECISE NAVIGATION (Condensed Height) */}
       <nav className={`w-full transition-all duration-300 ${scrolled ? 'bg-icce-blue/95 backdrop-blur-md shadow-xl sticky top-0' : 'bg-[#264E68]'}`}>
-        <div className="max-w-[1200px] mx-auto px-4">
+        <div className="max-w-[1400px] mx-auto px-4">
           <div className="flex items-center h-10">
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center w-full h-full">
@@ -223,7 +231,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-500 bg-[#14144d] ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <div className={`lg:hidden overflow-y-auto transition-all duration-500 bg-[#14144d] ${isOpen ? 'max-h-[calc(100vh-140px)]' : 'max-h-0'}`}>
            <div className="px-6 py-8 space-y-6">
               {navItems.map((item) => (
                 <div key={item.name} className="space-y-3">

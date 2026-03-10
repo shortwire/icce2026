@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Column 1: Identity */}
           <div className="lg:col-span-1 space-y-8">
              <div className="flex flex-col">
-                <img src="/assets/logos/icce2026-logo-FINAL_red.png" alt="ICCE 2026" className="h-16 w-auto object-contain mb-4 filter brightness-0 invert" />
+                <img src="/assets/logos/icce2026-logo-FINAL_red.png?v=1.0.1" alt="ICCE 2026" className="h-16 w-auto object-contain mb-4 filter brightness-0 invert" />
                 <span className="text-xl font-black tracking-tighter text-white leading-tight uppercase">ICCE 2026</span>
                 <span className="text-ieee-blue font-black uppercase tracking-[0.3em] text-[10px]">Kolkata, India</span>
              </div>

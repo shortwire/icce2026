@@ -119,60 +119,53 @@ const OtherCommittees = () => {
       <main className="container-boxed pt-4 pb-12 px-6">
         <div className="flex flex-col lg:flex-row gap-10">
            
-           {/* LEFT: Tab Navigation & Content */}
+           {/* LEFT: Accordion Committee List */}
            <div className="flex-grow lg:max-w-[70%]">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-                {/* Tabs Sidebar */}
-                <div className="md:col-span-4 space-y-2">
-                  {committees.map((comm, idx) => (
+              <div className="space-y-4">
+                {committees.map((comm, idx) => (
+                  <div key={comm.id} className="border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <button
-                      key={comm.id}
-                      onClick={() => setActiveTab(idx)}
-                      className={`w-full text-left px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-wider transition-all flex items-center justify-between group ${activeTab === idx ? 'bg-icce-blue text-white shadow-lg' : 'bg-slate-50 text-slate-500 hover:bg-slate-100'}`}
+                      onClick={() => setActiveTab(activeTab === idx ? -1 : idx)}
+                      className={`w-full text-left px-6 py-5 flex items-center justify-between transition-all group ${activeTab === idx ? 'bg-icce-blue text-white' : 'bg-white text-icce-blue hover:bg-slate-50'}`}
                     >
-                      <span>{comm.title}</span>
-                      <ChevronRight size={14} className={`transition-transform ${activeTab === idx ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
+                      <span className="text-[13px] font-black uppercase tracking-widest">{comm.title}</span>
+                      <ChevronRight size={18} className={`transition-transform duration-300 ${activeTab === idx ? 'rotate-90' : 'opacity-40'}`} />
                     </button>
-                  ))}
-                </div>
 
-                {/* Tab Content */}
-                <div className="md:col-span-8 bg-slate-50/50 rounded-[32px] p-8 border border-slate-100 min-h-[400px]">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeTab}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-8"
-                    >
-                      <div>
-                        <h2 className="text-2xl font-black text-icce-blue uppercase tracking-tight mb-1">{committees[activeTab].title}</h2>
-                        <div className="h-1 w-12 bg-yellow-400"></div>
-                      </div>
-
-                      <div className="space-y-6">
-                        <div className="flex flex-col gap-1">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-ieee-blue opacity-50">Chairperson</span>
-                          <div className="text-lg font-black text-icce-blue uppercase tracking-tight">{committees[activeTab].chair}</div>
-                        </div>
-
-                        <div className="space-y-3">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-ieee-blue opacity-50">Committee Members</span>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            {committees[activeTab].members.map((member, i) => (
-                              <div key={i} className="flex items-center gap-2 p-3 bg-white rounded-xl border border-slate-100 group hover:border-yellow-400/50 transition-colors">
-                                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0"></div>
-                                <span className="text-[11px] font-bold text-slate-600 uppercase tracking-tight">{member}</span>
+                    <AnimatePresence>
+                      {activeTab === idx && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="bg-slate-50/50"
+                        >
+                          <div className="p-8 space-y-8 border-t border-slate-100">
+                            <div className="space-y-6">
+                              <div className="flex flex-col gap-1">
+                                <span className={`text-[10px] font-black uppercase tracking-widest opacity-50 ${activeTab === idx ? 'text-ieee-blue' : 'text-slate-500'}`}>Chairperson</span>
+                                <div className="text-xl font-black text-icce-blue uppercase tracking-tight">{comm.chair}</div>
                               </div>
-                            ))}
+
+                              <div className="space-y-3">
+                                <span className={`text-[10px] font-black uppercase tracking-widest opacity-50 ${activeTab === idx ? 'text-ieee-blue' : 'text-slate-500'}`}>Committee Members</span>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                  {comm.members.map((member, i) => (
+                                    <div key={i} className="flex items-center gap-2 p-3 bg-white rounded-xl border border-slate-100 group/member hover:border-yellow-400/50 transition-colors shadow-sm">
+                                      <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0"></div>
+                                      <span className="text-[11px] font-bold text-slate-600 uppercase tracking-tight">{member}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
               </div>
            </div>
 

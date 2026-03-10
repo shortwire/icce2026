@@ -562,8 +562,8 @@ const Home = () => {
               </div>
 
               {/* Countdown Timer Strip */}
-              <div className="mt-8 md:mt-12 bg-white/40 backdrop-blur-sm p-5 rounded-[30px] border border-white/60 inline-flex items-center space-x-12 shadow-sm">
-                 <div className="flex items-center space-x-4 pr-12 border-r border-slate-200">
+              <div className="mt-8 md:mt-12 bg-white/40 backdrop-blur-sm p-5 rounded-[30px] border border-white/60 flex flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 shadow-sm w-fit">
+                 <div className="flex items-center space-x-4 pr-0 md:pr-12 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0">
                     <Clock className="text-ieee-blue animate-pulse" size={20} />
                     <div>
                        <div className="text-[9px] font-black uppercase tracking-widest text-icce-blue">Deadline: Paper Submission</div>
@@ -1036,7 +1036,7 @@ const Home = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-ieee-blue to-icce-blue rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     <div className="relative bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl flex items-center gap-8">
                        <div className="shrink-0 w-32 h-32 bg-white rounded-3xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
-                          <img src="/assets/sponsor/sponsor_02.png" alt="Technical Sponsor" className="w-full h-full object-contain transition-all duration-700" />
+                          <img src="/assets/sponsor/sponsor_02.png?v=1.0.1" alt="Technical Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
                           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-ieee-blue mb-1 block">Technical Sponsor</span>
@@ -1049,7 +1049,7 @@ const Home = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-[40px] blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
                     <div className="relative bg-white p-8 rounded-[40px] border border-slate-100 shadow-lg flex items-center gap-8 border-l-4 border-l-yellow-400">
                        <div className="shrink-0 w-32 h-32 bg-white rounded-3xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
-                          <img src="/assets/sponsor/sponsor_08.png" alt="Gold Sponsor" className="w-full h-full object-contain transition-all duration-700" />
+                          <img src="/assets/sponsor/sponsor_08.png?v=1.0.1" alt="Gold Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
                           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 mb-1 block">Gold Sponsor</span>
@@ -1067,19 +1067,19 @@ const Home = () => {
                  </div>
                  <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                     {[
-                      '/assets/sponsor/sponsor_01.png',
-                      '/assets/sponsor/sponsor_03.png',
-                      '/assets/sponsor/sponsor_04.png',
-                      '/assets/sponsor/sponsor_05.png',
-                      '/assets/sponsor/sponsor_06.png',
-                      '/assets/sponsor/sponsor_07.png'
+                      '/assets/sponsor/sponsor_01.png?v=1.0.1',
+                      '/assets/sponsor/sponsor_03.png?v=1.0.1',
+                      '/assets/sponsor/sponsor_04.png?v=1.0.1',
+                      '/assets/sponsor/sponsor_05.png?v=1.0.1',
+                      '/assets/sponsor/sponsor_06.png?v=1.0.1',
+                      '/assets/sponsor/sponsor_07.png?v=1.0.1'
                     ].map((partner, i) => (
                        <motion.div 
                           key={i}
                           whileHover={{ scale: 1.05 }}
-                          className="bg-white p-1 rounded-3xl shadow-sm hover:shadow-md transition-all flex items-center justify-center aspect-video group border border-slate-100"
+                          className="bg-white p-0 rounded-3xl shadow-sm hover:shadow-md transition-all flex items-center justify-center aspect-video group border border-slate-100 overflow-hidden"
                        >
-                          <img src={partner} alt={`Partner ${i+1}`} className="w-full h-full object-contain transition-all duration-700" />
+                          <img src={partner} alt={`Partner ${i+1}`} className="w-full h-full object-contain p-2 transition-all duration-700" />
                        </motion.div>
                     ))}
                  </div>
