@@ -17,13 +17,12 @@ const Footer = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-ieee-blue/5 blur-3xl -z-0"></div>
       
       <div className="container-boxed px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-20 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 pb-20 border-b border-white/5">
           
           {/* Column 1: Identity */}
           <div className="lg:col-span-1 space-y-8">
              <div className="flex flex-col">
                 <img src="/assets/logos/icce2026-logo-FINAL_red.png?v=1.0.1" alt="ICCE 2026" className="h-16 w-auto object-contain mb-4 filter brightness-0 invert" />
-                <span className="text-xl font-black tracking-tighter text-white leading-tight uppercase">ICCE 2026</span>
                 <span className="text-ieee-blue font-black uppercase tracking-[0.3em] text-[10px]">Kolkata, India</span>
              </div>
              <p className="text-[11px] text-gray-400 leading-relaxed text-justify italic font-medium">
@@ -108,13 +107,48 @@ const Footer = () => {
                 ))}
              </div>
           </div>
+
+          {/* Column 6: Venue Map */}
+          <div className="lg:col-span-1 space-y-8">
+             <h4 className="text-xs font-black uppercase tracking-[0.3em] text-ieee-blue border-l-2 border-ieee-blue pl-3">Location</h4>
+             <div className="bg-white/5 rounded-2xl text-white flex flex-col justify-end aspect-square shadow-xl relative overflow-hidden group">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.7570123512347!2d88.4123703!3d22.4762837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x276c0d30e6be12ea!2sNetaji%20Subhash%20Engineering%20College!5e0!3m2!1sen!2sin!4v1709650000000!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0 w-full h-full filter grayscale contrast-125 opacity-40 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+                ></iframe>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a2a] via-[#0a0a2a]/20 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-1000"></div>
+
+                <div className="relative z-10 p-4 pointer-events-none">
+                   <MapPin className="text-ieee-blue mb-2 shrink-0" size={16} />
+                   <h4 className="text-[11px] font-black uppercase tracking-tighter leading-none mb-1 text-white">NSEC Kolkata</h4>
+                   <div className="inline-flex items-center text-[8px] font-black uppercase tracking-[0.2em] text-ieee-blue">
+                     Google Maps <ExternalLink size={8} className="ml-1" />
+                   </div>
+                </div>
+                
+                <a 
+                  href="https://www.google.co.in/maps/place/Netaji+Subhash+Engineering+College/@22.4762837,88.4123703,17z/data=!3m1!4b1!4m6!3m5!1s0x3a02722b05a38e87:0x276c0d30e6be12ea!8m2!3d22.4762788!4d88.4149452!16s%2Fm%2F026y4qr?authuser=0&entry=ttu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 z-20"
+                  aria-label="View on Google Maps"
+                ></a>
+             </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="flex flex-col items-center md:items-start space-y-2">
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
-                © {currentYear} ICCE 2026. Technical Co-Sponsorship of IEEE Kolkata Section.
+                © {currentYear}. Technical Co-Sponsorship of IEEE Kolkata Section.
               </p>
            </div>
            <div className="flex items-center space-x-6 text-[9px] font-black uppercase tracking-widest text-gray-500">

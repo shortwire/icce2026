@@ -78,7 +78,7 @@ const About = () => {
                  </div>
                  <div className="prose prose-slate max-w-none">
                     <p className="text-sm font-bold text-slate-600 leading-relaxed mb-4 text-justify">
-                      Netaji Subhash Engineering College (NSEC), in collaboration with the IEEE AP-MTT Kolkata Chapter and with Technical Co-Sponsorship from the IEEE Kolkata Section, will organize the 2nd International Conference on Convergence in Engineering (ICCE 2026).
+                      Netaji Subhash Engineering College (NSEC), in collaboration with the IEEE AP-MTT Kolkata Chapters and with Technical Co-Sponsorship from the IEEE Kolkata Section, will organize the 2nd International Conference on Convergence in Engineering (ICCE 2026).
                     </p>
                     <p className="text-sm font-bold text-slate-600 leading-relaxed mb-4 text-justify">
                       The conference aims to bring together academicians, researchers, scientists, and industry professionals to present and discuss recent advancements and emerging trends in engineering and technology. The program will include keynote lectures, invited talks, tutorials, and peer-reviewed technical sessions comprising oral and poster presentations.

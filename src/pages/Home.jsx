@@ -487,7 +487,7 @@ const Home = () => {
     <div className="flex flex-col bg-white overflow-hidden selection:bg-ieee-blue selection:text-white">
       
       {/* 1. PANORAMIC BLENDED HERO - Non-Generic & High End */}
-      <section className="relative min-h-[450px] flex items-start pt-6 md:pt-8 group">
+      <section className="relative min-h-[calc(100vh-180px)] flex items-center pt-6 md:pt-8 group">
         {/* Blended Background Picture - Local Kolkata Image */}
         <div className="absolute top-0 right-0 bottom-0 left-0 lg:left-1/2 z-0 overflow-hidden pointer-events-none">
            <img 
@@ -520,17 +520,17 @@ const Home = () => {
                   <span className="text-[12px] font-black uppercase tracking-[0.2em] text-icce-blue">ICCE 2026 • Kolkata</span>
                 </div>
                 <div className="hidden md:block h-4 w-px bg-slate-200"></div>
-                <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10 whitespace-nowrap">
-                  Technical co-sponsorship by IEEE Kolkata Section and AP/MTT Kolkata Chapter
+                <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10 text-center">
+                  Technical co-sponsorship by IEEE Kolkata Section and Financial Co-Sponsorship by IEEE AP-MTT Kolkata Chapter
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-[7.5rem] font-black text-icce-blue leading-[0.8] tracking-tighter uppercase mb-4 drop-shadow-sm">
+              <h1 className="text-4xl md:text-6xl font-black text-icce-blue leading-none tracking-tighter uppercase mb-4 drop-shadow-sm">
                 Convergence<br/>
                 <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2.5px #191961' }}>Engineering</span>
               </h1>
               
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-8 pt-1">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pt-1">
                  <div className="max-w-xs space-y-3">
                     <p className="text-sm text-slate-500 font-bold leading-relaxed border-l-4 border-ieee-blue pl-6 py-1">
                        Advancing engineering frontiers through interdisciplinary excellence and IEEE standards.
@@ -562,7 +562,7 @@ const Home = () => {
               </div>
 
               {/* Countdown Timer Strip */}
-              <div className="mt-8 md:mt-12 bg-white/40 backdrop-blur-sm p-5 rounded-[30px] border border-white/60 flex flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 shadow-sm w-fit">
+              <div className="mt-6 md:mt-8 bg-white/40 backdrop-blur-sm p-4 rounded-[30px] border border-white/60 flex flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 shadow-sm w-fit">
                  <div className="flex items-center space-x-4 pr-0 md:pr-12 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0">
                     <Clock className="text-ieee-blue animate-pulse" size={20} />
                     <div>
@@ -658,7 +658,7 @@ const Home = () => {
                  
                  <div className="space-y-4">
                     <p className="text-lg md:text-xl text-slate-800 leading-tight font-black italic pl-2 py-1">
-                       Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTT Kolkata and IEEE Kolkata Section, organizes the 2nd International Conference for Convergence in Engineering.
+                       Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTT Kolkata Chapters and IEEE Kolkata Section, organizes the 2nd International Conference for Convergence in Engineering.
                     </p>
                     <div className="text-[11px] text-slate-500 leading-relaxed font-bold text-justify columns-1 md:columns-2 gap-8 pt-2">
                        <p>
@@ -867,44 +867,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3.7 ADVISORY COMMITTEE - Boutique Directory Style */}
-      <section className="py-12 bg-white relative">
-        <div className="container-boxed">
-           <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-              <div className="relative group">
-                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
-                    Advisory <br/>
-                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>COMMITTEE</span>
-                 </h2>
-              </div>
-              <div className="max-w-xs md:text-right">
-                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Eminent Guidance</p>
-                 <p className="text-sm font-bold text-slate-500 leading-tight">Distinguished academic and industry leaders providing strategic direction to ensure global standards.</p>
-              </div>
-           </div>
-
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-8">
-              {advisoryCommittee.map((member, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.03 }}
-                  className="group flex flex-col space-y-1 relative"
-                >
-                  <div className="absolute -left-4 top-1 w-1.5 h-1.5 rounded-full bg-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <h4 className="text-[13px] font-black text-icce-blue uppercase tracking-tight group-hover:translate-x-1 transition-transform">{member.name}</h4>
-                  <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-ieee-blue opacity-70 uppercase tracking-widest">{member.role}</p>
-                    <p className="text-[9px] font-medium text-slate-500 leading-tight">{member.aff}</p>
-                  </div>
-                </motion.div>
-              ))}
-           </div>
-        </div>
-      </section>
-
       {/* 4. VENUE SECTION - Modern & Immersive */}
       <section className="pt-12 pb-12 bg-white relative overflow-hidden">
          <div className="container-boxed relative z-10">
@@ -974,38 +936,6 @@ const Home = () => {
                           title="City Spirit" 
                           subtitle="Explore Kolkata"
                         />
-                        
-                        <div className="bg-[#191961] rounded-[60px] text-white flex flex-col justify-end aspect-[4/3] shadow-2xl relative overflow-hidden group">
-                           <iframe 
-                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.7570123512347!2d88.4123703!3d22.4762837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x276c0d30e6be12ea!2sNetaji%20Subhash%20Engineering%20College!5e0!3m2!1sen!2sin!4v1709650000000!5m2!1sen!2sin" 
-                             width="100%" 
-                             height="100%" 
-                             style={{ border: 0 }} 
-                             allowFullScreen="" 
-                             loading="lazy" 
-                             referrerPolicy="no-referrer-when-downgrade"
-                             className="absolute inset-0 w-full h-full filter grayscale contrast-125 opacity-40 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
-                           ></iframe>
-                           
-                           <div className="absolute inset-0 bg-gradient-to-t from-[#191961] via-[#191961]/20 to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-1000"></div>
-
-                           <div className="relative z-10 p-10 pointer-events-none">
-                              <MapPin className="text-ieee-blue mb-4 shrink-0" size={32} />
-                              <h4 className="text-xl font-black uppercase tracking-tighter leading-none mb-2">Techno City</h4>
-                              <p className="text-[10px] font-bold text-blue-300 opacity-60 uppercase tracking-widest">Innovation Hub, South Kolkata</p>
-                              <div className="mt-6 inline-flex items-center text-[9px] font-black uppercase tracking-[0.3em] text-ieee-blue">
-                                View On Map <ExternalLink size={10} className="ml-2" />
-                              </div>
-                           </div>
-                           
-                           <a 
-                             href="https://www.google.co.in/maps/place/Netaji+Subhash+Engineering+College/@22.4762837,88.4123703,17z/data=!3m1!4b1!4m6!3m5!1s0x3a02722b05a38e87:0x276c0d30e6be12ea!8m2!3d22.4762788!4d88.4149452!16s%2Fm%2F026y4qr?authuser=0&entry=ttu" 
-                             target="_blank" 
-                             rel="noopener noreferrer"
-                             className="absolute inset-0 z-20"
-                             aria-label="View on Google Maps"
-                           ></a>
-                        </div>
                      </div>
                   </div>
                </div>
@@ -1014,7 +944,7 @@ const Home = () => {
       </section>
 
       {/* 7. SPONSORS & PARTNERS - High Density Innovative Design */}
-      <section className="pt-0 pb-24 bg-white relative overflow-hidden">
+      <section className="pt-16 pb-24 bg-white relative overflow-hidden">
         <div className="container-boxed relative z-10">
            <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-8">
               <div className="relative group">

@@ -142,23 +142,23 @@ const Header = () => {
           </div>
 
           {/* Partner Logos Horizontal Array (Aligned precisely to image) */}
-          <div className="flex items-center space-x-3 md:space-x-4 lg:space-x-6 shrink-0 h-9 md:h-12">
-             <div className="h-full flex items-center justify-center">
+          <div className="flex items-center space-x-2 shrink-0 h-11 md:h-14">
+             <div className="h-full flex items-center justify-center p-1">
                 <img src="/assets/logos/ieee-ap-mtt.png?v=1.0.1" alt="IEEE AP-MTT" className="max-h-full w-auto object-contain" />
              </div>
              <div className="h-6 md:h-8 w-px bg-slate-100"></div>
-             <div className="h-full flex items-center justify-center">
+             <div className="h-full flex items-center justify-center p-1">
                 <img src="/assets/logos/IEEE_Kolkata_Section_logo.png?v=1.0.1" alt="IEEE Kolkata Section" className="max-h-full w-auto object-contain" />
              </div>
              <div className="h-6 md:h-8 w-px bg-slate-100"></div>
-             <div className="h-full flex items-center justify-center">
+             <div className="h-full flex items-center justify-center p-1">
                 <img src="/assets/logos/iqac.png?v=1.0.1" alt="IQAC NSEC" className="max-h-full w-auto object-contain" />
              </div>
              <div className="h-6 md:h-8 w-px bg-slate-100"></div>
              
              {/* New Combined TIG Logo Image */}
-             <div className="h-full flex items-center justify-center">
-                <img src="/assets/logos/nsec.jpg?v=1.0.1" alt="TIG & NSEC Initiative" className="max-h-full w-auto object-contain" />
+             <div className="h-full flex items-center justify-center p-1">
+                <img src="/assets/logos/nsec.png?v=1.0.1" alt="TIG & NSEC Initiative" className="max-h-full w-auto object-contain" />
              </div>
           </div>
         </div>
