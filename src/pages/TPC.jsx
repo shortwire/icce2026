@@ -2,18 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, 
-  GraduationCap, 
-  Globe, 
-  Briefcase,
   Star,
-  CheckCircle2,
   ArrowRightCircle,
   Award,
   ShieldCheck,
-  Zap,
   Layout,
   Target,
-  Code2
+  Code2,
+  GraduationCap
 } from 'lucide-react';
 
 const TPC = () => {
@@ -63,10 +59,8 @@ const TPC = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden font-sans">
-      {/* Background elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ieee-blue/[0.01] rounded-full blur-3xl pointer-events-none"></div>
       
-      {/* --- HERO SECTION --- */}
       <header className="container-boxed pt-8 pb-6 px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-50 pb-8">
           <div className="relative group">
@@ -83,11 +77,7 @@ const TPC = () => {
       </header>
 
       <main className="container-boxed pt-4 pb-12 px-6">
-        
-        {/* --- MAIN CONTENT --- */}
         <div className="flex flex-col lg:flex-row gap-10">
-           
-           {/* LEFT: Members Grid */}
            <div className="flex-grow lg:max-w-[70%]">
               {committeeSections.map((section, sectionIdx) => (
                 <div key={sectionIdx} className="mb-12 last:mb-0">
@@ -134,7 +124,6 @@ const TPC = () => {
               ))}
            </div>
 
-           {/* RIGHT: Sidebar */}
            <div className="lg:w-[30%] space-y-6">
               <section className="bg-[#191961] p-6 rounded-[32px] text-white shadow-xl relative overflow-hidden">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-bl-full"></div>

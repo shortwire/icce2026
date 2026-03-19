@@ -487,7 +487,7 @@ const Home = () => {
     <div className="flex flex-col bg-white overflow-hidden selection:bg-ieee-blue selection:text-white">
       
       {/* 1. PANORAMIC BLENDED HERO - Non-Generic & High End */}
-      <section className="relative min-h-[calc(100vh-180px)] flex items-center pt-6 md:pt-8 group">
+      <section className="relative min-h-[calc(100vh-140px)] flex items-center group">
         {/* Blended Background Picture - Local Kolkata Image */}
         <div className="absolute top-0 right-0 bottom-0 left-0 lg:left-1/2 z-0 overflow-hidden pointer-events-none">
            <img 
@@ -505,79 +505,86 @@ const Home = () => {
            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent z-20"></div>
         </div>
 
-        <div className="container-boxed grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
-          
-          {/* Main Title Layer */}
-          <div className="lg:col-span-8 space-y-4">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center gap-x-6 gap-y-2 mb-4">
-                <div className="flex items-center space-x-3 whitespace-nowrap">
-                  <div className="h-0.5 w-8 bg-ieee-blue"></div>
-                  <span className="text-[12px] font-black uppercase tracking-[0.2em] text-icce-blue">ICCE 2026 • Kolkata</span>
-                </div>
-                <div className="hidden md:block h-4 w-px bg-slate-200"></div>
-                <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue bg-ieee-blue/5 px-3 py-1 rounded-full border border-ieee-blue/10 text-center">
-                  Technical co-sponsorship by IEEE Kolkata Section and Financial Co-Sponsorship by IEEE AP-MTT Kolkata Chapter
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-black text-icce-blue leading-none tracking-tighter uppercase mb-4 drop-shadow-sm">
-                Convergence<br/>
-                <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2.5px #191961' }}>Engineering</span>
-              </h1>
-              
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pt-1">
-                 <div className="max-w-xs space-y-3">
-                    <p className="text-sm text-slate-500 font-bold leading-relaxed border-l-4 border-ieee-blue pl-6 py-1">
-                       Advancing engineering frontiers through interdisciplinary excellence and IEEE standards.
-                    </p>
-                    <div className="flex items-start space-x-3 pl-6">
-                       <ShieldCheck className="text-ieee-blue mt-0.5" size={16} />
-                       <div className="flex flex-col">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-icce-blue leading-none">Probable Publication in IEEE Xplore</span>
-                          <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest leading-tight mt-1.5">Some selected papers will be published in SCI Index Journal</span>
+        <div className="container-boxed relative z-10">
+           <motion.div 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             className="space-y-8"
+           >
+             {/* 1. Header Row (Title) - MATCHING OTHER SECTIONS EXACTLY */}
+             <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-8">
+               <div className="relative group text-left">
+                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
+                   Welcome to <br/>
+                   <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>ICCE 2026</span>
+                 </h2>
+               </div>
+               <div className="max-w-xs md:text-right">
+               </div>
+             </div>
+
+             {/* 2. Sponsorship Badge & Description Row */}
+             <div className="space-y-6">
+               <div className="inline-flex items-center bg-ieee-blue/5 border border-ieee-blue/10 px-4 py-1.5 rounded-full shadow-sm">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-ieee-blue">
+                     Technical sponsorship by <span className="text-icce-blue">IEEE Kolkata Section</span> and Financial Sponsorship by <span className="text-icce-blue">IEEE AP-MTTs Kolkata Chapter</span>
+                  </span>
+               </div>
+
+               <div className="max-w-2xl text-left">
+                 <p className="text-lg md:text-xl text-slate-800 leading-tight font-black italic pl-2 py-1 border-l-4 border-ieee-blue">
+                    Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTTs Kolkata Chapters and IEEE Kolkata Section, organizes the 2nd International Conference for Convergence in Engineering.
+                 </p>
+               </div>
+             </div>
+
+             {/* 3. Timer & CTAs Row (Full Width Single Row) */}
+             <div className="pt-6 relative z-30">
+               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-6">
+                 {/* Countdown Timer Strip */}
+                 <div className="bg-white/80 backdrop-blur-md p-3 rounded-[24px] border border-slate-200 flex items-center space-x-6 shadow-md h-[60px] shrink-0 w-fit">
+                   <div className="flex items-center space-x-3 pr-6 border-r border-slate-200 h-full">
+                       <Clock className="text-ieee-blue animate-pulse" size={16} />
+                       <div className="flex flex-col justify-center">
+                         <div className="text-[8px] font-black uppercase tracking-widest text-icce-blue leading-none mb-1">Deadline: Paper Submission</div>
+                         <div className="text-[9px] font-bold text-slate-400 leading-none">July 15, 2026</div>
                        </div>
-                    </div>
+                   </div>
+                   <div className="flex items-center h-full">
+                     <CountdownTimer targetDate="July 15, 2026 23:59:59" />
+                   </div>
                  </div>
-                 
-                 {/* 3 CTA Buttons Layer */}
-                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <Link to="/submission" className="flex flex-col items-center justify-center w-28 h-28 rounded-3xl bg-icce-blue text-white hover:bg-ieee-blue hover:scale-105 transition-all shadow-xl group">
-                       <FileText size={20} className="mb-2" />
-                       <span className="text-[9px] font-black uppercase tracking-widest text-center">Submit<br/>Paper</span>
-                    </Link>
-                    <Link to="/registration" className="flex flex-col items-center justify-center w-28 h-28 rounded-3xl bg-white border-2 border-slate-100 text-icce-blue hover:border-icce-blue hover:scale-105 transition-all shadow-lg group">
-                       <UserPlus size={20} className="mb-2 text-ieee-blue" />
-                       <span className="text-[9px] font-black uppercase tracking-widest text-center">Register<br/>Now</span>
-                    </Link>
-                    <a href="/cfp.pdf" download className="flex flex-col items-center justify-center w-28 h-28 rounded-3xl bg-slate-50 text-slate-500 hover:bg-slate-100 hover:scale-105 transition-all border border-slate-200 group">
-                       <Download size={20} className="mb-2" />
-                       <span className="text-[9px] font-black uppercase tracking-widest text-center">Download<br/>CFP</span>
-                    </a>
-                 </div>
-              </div>
 
-              {/* Countdown Timer Strip */}
-              <div className="mt-6 md:mt-8 bg-white/40 backdrop-blur-sm p-4 rounded-[30px] border border-white/60 flex flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 shadow-sm w-fit">
-                 <div className="flex items-center space-x-4 pr-0 md:pr-12 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0">
-                    <Clock className="text-ieee-blue animate-pulse" size={20} />
-                    <div>
-                       <div className="text-[9px] font-black uppercase tracking-widest text-icce-blue">Deadline: Paper Submission</div>
-                       <div className="text-[10px] font-bold text-slate-400">July 15, 2026</div>
-                    </div>
-                 </div>
-                 <CountdownTimer targetDate="July 15, 2026 23:59:59" />
-              </div>
-            </motion.div>
-          </div>
+                 {/* Overlays (Publication + CTAs) - Pushed to the far right */}
+                 <div className="flex items-center flex-wrap justify-start lg:justify-end gap-2">
+                   {/* Probable Publication Label - Compact */}
+                   <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 h-[60px] rounded-full border border-slate-200 shadow-md shrink-0">
+                       <ShieldCheck className="text-ieee-blue" size={14} />
+                       <span className="text-[8px] font-black uppercase tracking-widest text-icce-blue">Probable IEEE Publication</span>
+                   </div>
 
-          {/* Right side area for background image focal point */}
-          <div className="lg:col-span-4 hidden lg:block relative h-full">
-          </div>
+                   {/* Compact CTA Buttons */}
+                   <div className="flex items-center gap-2 h-[60px]">
+                       <Link to="/submission" className="flex items-center space-x-2 bg-icce-blue text-white px-5 h-full rounded-full shadow-lg hover:bg-ieee-blue transition-all text-[9px] font-black uppercase tracking-widest border border-icce-blue">
+                         <FileText size={12} />
+                         <span>Submit Paper</span>
+                       </Link>
+
+                       <Link to="/registration" className="flex items-center space-x-2 bg-white text-icce-blue px-5 h-full rounded-full shadow-md hover:bg-slate-50 transition-all text-[9px] font-black uppercase tracking-widest border border-slate-200">
+                         <UserPlus size={12} />
+                         <span>Register</span>
+                       </Link>
+
+                       <a href="/cfp.pdf" download className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm text-slate-500 px-5 h-full rounded-full shadow-md hover:bg-white transition-all text-[9px] font-black uppercase tracking-widest border border-slate-200">
+                         <Download size={12} />
+                         <span>CFP</span>
+                       </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </motion.div>
         </div>
       </section>
 
@@ -638,94 +645,6 @@ const Home = () => {
                  </span>
               </div>
            </div>
-
-           {/* Content Grid - Snug Fit & Centered */}
-           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Left: Welcome */}
-              <motion.div 
-                className="lg:col-span-7 space-y-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                 <div className="space-y-0.5">
-                    <span className="text-[9px] font-black uppercase tracking-[0.4em] text-ieee-blue/40">Discovery • Innovation • Standards</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase tracking-tighter leading-none">
-                       Welcome to<br/>
-                       <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '1.5px #191961' }}>ICCE 2026</span>
-                    </h2>
-                 </div>
-                 
-                 <div className="space-y-4">
-                    <p className="text-lg md:text-xl text-slate-800 leading-tight font-black italic pl-2 py-1">
-                       Netaji Subhash Engineering College (NSEC), in collaboration with IEEE AP-MTT Kolkata Chapters and IEEE Kolkata Section, organizes the 2nd International Conference for Convergence in Engineering.
-                    </p>
-                    <div className="text-[11px] text-slate-500 leading-relaxed font-bold text-justify columns-1 md:columns-2 gap-8 pt-2">
-                       <p>
-                          The conference aims to bring together academicians, researchers, scientists, and industry professionals to present and discuss recent advancements and emerging trends in engineering and technology. The program will include keynote lectures, invited talks, tutorials, and technical sessions.
-                       </p>
-                       <p>
-                          All accepted and presented papers will be submitted to the IEEE Xplore Digital Library for probable inclusion, subject to IEEE quality review and compliance with publication policies. We invite you to join us in this transformative gathering of global minds.
-                       </p>
-                    </div>
-                 </div>
-              </motion.div>
-
-              {/* Right: Aims - Abstract Redesign with Spillover Content */}
-              <motion.div 
-                className="lg:col-span-5 relative self-center"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                 {/* Abstract "Boutique" Shapes in Background - Compacted */}
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[95%] bg-[#f5f8ff] rounded-[80px] rotate-3 group-hover:rotate-0 transition-transform duration-1000 -z-10 border border-indigo-100/50 shadow-sm"></div>
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-yellow-400/15 rounded-full blur-3xl -z-10 animate-pulse"></div>
-                 
-                 <div className="relative z-10 py-2">
-                    {/* Caption spills out to the left */}
-                    <h3 className="text-xl md:text-2xl font-black text-icce-blue uppercase tracking-tighter italic leading-none flex items-center -ml-12 mb-8 bg-white py-4 px-7 shadow-xl rounded-r-full border-l-8 border-yellow-400 w-max">
-                       <Zap className="mr-3 text-yellow-400" size={20} />
-                       ICCE 2026 aims to
-                    </h3>
-                    
-                    {/* Objectives spill over the background shapes */}
-                    <div className="space-y-4 relative">
-                       {[
-                          "Global platform for interdisciplinary research",
-                          "High-quality peer-reviewed research (IEEE)",
-                          "Foster academia–industry collaboration",
-                          "Sustainable and socially responsible tech",
-                          "Support students and early-career researchers"
-                       ].map((obj, i) => (
-                          <div key={i} className={`flex items-start space-x-5 group/item ${i % 2 === 1 ? 'translate-x-3' : '-translate-x-1'}`}>
-                             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400 shrink-0 mt-1.5 shadow-sm group-hover/item:scale-[1.5] transition-all duration-500"></div>
-                             <p className="text-[11px] md:text-[12px] font-black text-slate-700 leading-tight drop-shadow-sm group-hover/item:text-icce-blue transition-colors">
-                                {obj}
-                             </p>
-                          </div>
-                       ))}
-                    </div>
-                    
-                    {/* Snug footer also spilling slightly - Compacted */}
-                    <div className="mt-8 pt-6 flex items-center justify-between border-t border-slate-200/40 w-full lg:w-[105%] -ml-4">
-                       <div className="flex items-center space-x-3">
-                          <div className="flex -space-x-2.5">
-                             {[1,2,3].map(i => (
-                                <div key={i} className="w-8 h-8 rounded-full border-[3px] border-white bg-slate-200 overflow-hidden shadow-lg ring-1 ring-slate-100">
-                                   <img src={`https://i.pravatar.cc/100?u=${i+30}`} alt="Attendee" />
-                                </div>
-                             ))}
-                          </div>
-                          <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest bg-white px-3 py-1 rounded-full shadow-sm">Impact</span>
-                       </div>
-                       <Link to="/submission" className="bg-icce-blue text-white px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest hover:bg-yellow-400 hover:text-icce-blue transition-all shadow-xl hover:scale-105 active:scale-95">
-                          Submit
-                       </Link>
-                    </div>
-                 </div>
-              </motion.div>
-           </div>
         </div>
       </section>
 
@@ -733,7 +652,7 @@ const Home = () => {
       <section className="mt-6 pb-16 bg-white relative">
         <div className="container-boxed relative z-10">
            
-           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-8">
               <div className="relative group">
                  <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
                     Conference <br/>
@@ -758,7 +677,7 @@ const Home = () => {
       <section className="py-16 bg-white relative overflow-hidden">
         <div className="container-boxed relative z-10">
            
-           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-8">
               <div className="relative group">
                  <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
                     Conference <br/>
@@ -797,80 +716,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3.5 KEYNOTE SPEAKERS - Boutique Design */}
-      <section className="mt-6 pb-24 bg-white relative">
-        <div className="container-boxed relative z-10">
-           
-           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
-              <div className="relative group">
-                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
-                    Keynote <br/>
-                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>SPEAKERS</span>
-                 </h2>
-              </div>
-              <div className="max-w-xs md:text-right">
-                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Eminent Visionaries</p>
-                 <p className="text-sm font-bold text-slate-500 leading-tight">ICCE 2026 hosts distinguished pioneers fostering global exchange of breakthrough engineering concepts.</p>
-              </div>
-           </div>
-
-           <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                 {keynoteSpeakers.map((speaker, i) => (
-                   <KeynoteSpeakerCard key={i} speaker={speaker} i={i} />
-                 ))}
-              </div>
-              
-              {/* Draft Status Overlay */}
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
-                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
-                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </section>
-
-      {/* 3.6 PRE-CONFERENCE WORKSHOPS - Staggered Blade Design */}
-      <section className="mt-0 pb-24 bg-white relative">
-        <div className="container-boxed relative z-10">
-           
-           <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-              <div className="relative group">
-                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
-                    Pre-Conference <br/>
-                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>WORKSHOPS</span>
-                 </h2>
-              </div>
-              <div className="max-w-xs md:text-right">
-                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Immersive Learning</p>
-                 <p className="text-sm font-bold text-slate-500 leading-tight">Advanced hands-on sessions led by industry pioneers focused on cutting-edge technological implementation.</p>
-              </div>
-           </div>
-
-           <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 pb-12">
-                 {workshops.map((workshop, i) => (
-                   <WorkshopCard key={workshop.id} workshop={workshop} i={i} />
-                 ))}
-              </div>
-              
-              {/* Draft Status Overlay */}
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
-                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
-                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </section>
-
       {/* 4. VENUE SECTION - Modern & Immersive */}
       <section className="pt-12 pb-12 bg-white relative overflow-hidden">
          <div className="container-boxed relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 gap-8">
                <div className="relative group">
                   <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
                      Conference <br/>
@@ -946,7 +795,7 @@ const Home = () => {
       {/* 7. SPONSORS & PARTNERS - High Density Innovative Design */}
       <section className="pt-16 pb-24 bg-white relative overflow-hidden">
         <div className="container-boxed relative z-10">
-           <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-8">
+           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-20 gap-8">
               <div className="relative group">
                  <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
                     Conference <br/>
@@ -966,11 +815,10 @@ const Home = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-ieee-blue to-icce-blue rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     <div className="relative bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl flex items-center gap-8">
                        <div className="shrink-0 w-32 h-32 bg-white rounded-3xl flex items-center justify-center p-3 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
-                          <img src="/assets/sponsor/sponsor_02.png?v=1.0.1" alt="Technical Sponsor" className="w-full h-full object-contain transition-all duration-700" />
+                          <img src="/assets/sponsor/sponsor_02.png?v=1.0.1" alt="Technical Co-Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
-                          <span className="text-[9px] font-black uppercase tracking-[0.3em] text-ieee-blue mb-1 block">Technical Sponsor</span>
-                          <h4 className="text-lg font-black text-icce-blue uppercase tracking-tight">Main Technical Partner</h4>
+                          <h4 className="text-lg font-black text-icce-blue uppercase tracking-tight">Technical Co-Sponser</h4>
                        </div>
                     </div>
                  </div>
@@ -982,8 +830,7 @@ const Home = () => {
                           <img src="/assets/sponsor/sponsor_08.png?v=1.0.1" alt="Gold Sponsor" className="w-full h-full object-contain transition-all duration-700" />
                        </div>
                        <div>
-                          <span className="text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 mb-1 block">Gold Sponsor</span>
-                          <h4 className="text-lg font-black text-icce-blue uppercase tracking-tight">Lead Financial Partner</h4>
+                          <h4 className="text-lg font-black text-icce-blue uppercase tracking-tight">Financial Sponsor</h4>
                        </div>
                     </div>
                  </div>
@@ -992,7 +839,7 @@ const Home = () => {
               {/* Partners Grid (Right Side - High Density) */}
               <div className="lg:col-span-7 bg-slate-50/50 p-10 rounded-[60px] border border-dashed border-slate-200">
                  <div className="flex items-center gap-3 mb-8">
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Technical Partners</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Our aids</span>
                     <div className="h-px flex-grow bg-slate-200"></div>
                  </div>
                  <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -1012,6 +859,76 @@ const Home = () => {
                           <img src={partner} alt={`Partner ${i+1}`} className="w-full h-full object-contain p-2 transition-all duration-700" />
                        </motion.div>
                     ))}
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* 3.5 KEYNOTE SPEAKERS - Boutique Design */}
+      <section className="mt-6 pb-24 bg-white relative">
+        <div className="container-boxed relative z-10">
+           
+           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-8">
+              <div className="relative group">
+                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
+                    Keynote <br/>
+                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>SPEAKERS</span>
+                 </h2>
+              </div>
+              <div className="max-w-xs md:text-right">
+                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Eminent Visionaries</p>
+                 <p className="text-sm font-bold text-slate-500 leading-tight">ICCE 2026 hosts distinguished pioneers fostering global exchange of breakthrough engineering concepts.</p>
+              </div>
+           </div>
+
+           <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                 {keynoteSpeakers.map((speaker, i) => (
+                   <KeynoteSpeakerCard key={i} speaker={speaker} i={i} />
+                 ))}
+              </div>
+              
+              {/* Draft Status Overlay */}
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
+                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
+                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* 3.6 PRE-CONFERENCE WORKSHOPS - Staggered Blade Design */}
+      <section className="mt-0 pb-24 bg-white relative">
+        <div className="container-boxed relative z-10">
+           
+           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 gap-8">
+              <div className="relative group">
+                 <h2 className="text-4xl md:text-6xl font-black text-icce-blue uppercase leading-none tracking-tighter">
+                    Pre-Conference <br/>
+                    <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #191961' }}>WORKSHOPS</span>
+                 </h2>
+              </div>
+              <div className="max-w-xs md:text-right">
+                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-ieee-blue opacity-50 mb-2">Immersive Learning</p>
+                 <p className="text-sm font-bold text-slate-500 leading-tight">Advanced hands-on sessions led by industry pioneers focused on cutting-edge technological implementation.</p>
+              </div>
+           </div>
+
+           <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 pb-12">
+                 {workshops.map((workshop, i) => (
+                   <WorkshopCard key={workshop.id} workshop={workshop} i={i} />
+                 ))}
+              </div>
+              
+              {/* Draft Status Overlay */}
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[3px] z-30 flex items-center justify-center -m-4 rounded-[60px]">
+                 <div className="bg-icce-blue/95 text-white px-10 py-6 rounded-[40px] shadow-[0_20px_50px_rgba(25,25,97,0.3)] border-2 border-yellow-400/50 flex flex-col items-center gap-2 transform -rotate-1">
+                    <span className="text-2xl font-black uppercase tracking-[0.2em] italic">Draft</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Confirmation Pending</span>
                  </div>
               </div>
            </div>

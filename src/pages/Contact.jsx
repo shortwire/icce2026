@@ -57,7 +57,6 @@ const Contact = () => {
                         </div>
                         <div>
                             <p className="text-[9px] font-black uppercase tracking-widest text-ieee-blue mb-0.5">Conference Secretary</p>
-                            <p className="text-sm font-black uppercase tracking-tight mb-0.5">Rajkumar Patra</p>
                             <a href="tel:8240699041" className="text-xs font-bold text-blue-200 hover:text-white transition-colors flex items-center gap-1.5">
                                 <Phone size={10} /> 8240699041
                             </a>
@@ -68,7 +67,7 @@ const Contact = () => {
 
               <section>
                  <div className="flex items-center gap-3 mb-4">
-                    <h2 className="text-[10px] font-black text-icce-blue uppercase tracking-[0.2em]">Support Availability</h2>
+                    <h2 className="text-[10px] font-black text-icce-blue uppercase tracking-[0.2em]">Availability</h2>
                     <div className="h-px flex-1 bg-slate-100"></div>
                  </div>
                  <div className="bg-white border-2 border-slate-50 p-5 rounded-[20px] flex items-start gap-4">
@@ -106,7 +105,7 @@ const Contact = () => {
                     
                     <div className="flex-grow min-h-[300px] bg-white rounded-[24px] overflow-hidden shadow-inner border border-white relative group">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.7570123512347!2d88.4123703!3d22.4762837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x276c0d30e6be12ea!2sNetaji%20Subhash%20Engineering%20College!5e0!3m2!1sen!2sin!4v1709650000000!5m2!1sen!2sin" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60000.7570123512347!2d88.4123703!3d22.4762837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x276c0d30e6be12ea!2sNetaji%20Subhash%20Engineering%20College!5e0!3m2!1sen!2sin!4v1709650000000!5m2!1sen!2sin" 
                             width="100%" 
                             height="100%" 
                             style={{ border: 0 }} 

@@ -28,34 +28,46 @@ const Topics = () => {
     }
   }, [hash]);
 
+  useEffect(() => {
+    if (searchTerm.trim().length > 2) {
+      const matchingTrack = tracks.find(track => isTrackHighlighted(track, searchTerm));
+      if (matchingTrack) {
+        const element = document.getElementById(`track-${matchingTrack.id}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  }, [searchTerm]);
+
   const tracks = [
     {
       id: "A",
       title: "Computational Techniques and Informatics",
       topics: [
-        "Artificial Intelligence", "Machine Learning", "Deep Learning", "Soft Computing", "Pattern Recognition", "ArtificialNeural Networks", "Evolutionary Computing", "Swarm Intelligence", "Fuzzy Logic", "Natural Computing", "DataScience", "Image processing", "Big Data Analytics", "Big Data Analysis", "Data Mining", "Web Mining", "TextMining", "Social Media Mining", "Business Intelligence", "Data Fusion", "Data Warehousing and Mining", "Explainable AI", "Generative AI", "Foundation Models", "Federated Learning", "Multimodal AI", "ComputerVision", "Natural Language Processing", "Brain Modelling", "Cognitive Computing", "Smart Systems", "Human–Computer Interaction", "HighPerformance Computing", "Distributed Computing", "Cluster Computing", "Cloud Computing", "Quantum Computing", "Edge Computing", "Ubiquitous Computing", "ServerlessComputing", "Fog Computing", "Green Computing", "SoftwareDefined Networking", "Digital Twins", "Internet ofThings", "CyberPhysical Systems & security", "IoT Security", "Edge AI", "Mobile Computing", "Sensor Networks", "Autonomous and Intelligent Systems", "Cryptography", "Network Security", "Information Security", "Cybersecurity", "Convergence in Digital Security", "Blockchain Technology", "Bioinformatics", "ComputationalBiology", "Computational Genomics", "Biomedical Informatics", "Computational Neuroscience", "SoftwareEngineering", "Advanced Computing", "Computing Technologies", "Innovation and Technology Integration", "Digital Transformation"
-      ]
+        "Artificial Intelligence", "Machine Learning", "Deep Learning", "Soft Computing", "Pattern Recognition", "Artificial Neural Networks", "Evolutionary Computing", "Swarm Intelligence", "Fuzzy Logic", "Natural Computing", "DataScience", "Image Processing", "Big Data Analytics", "Big Data Analysis", "Data Mining", "Web Mining", "Text Mining", "Social Media Mining", "Business Intelligence", "Data Fusion", "Data Warehousing and Mining", "Explainable AI", "Generative AI", "Foundation Models", "Federated Learning", "Multimodal AI", "ComputerVision", "Natural Language Processing", "Brain Modelling", "Cognitive Computing", "Smart Systems", "Human–Computer Interaction", "High Performance Computing", "Distributed Computing", "Cluster Computing", "Cloud Computing", "Quantum Computing", "Edge Computing", "Ubiquitous Computing", "Serverless Computing", "Fog Computing", "Green Computing", "Software Defined Networking", "Digital Twins", "Internet of Things", "Cyber Physical Systems & Security", "IoT Security", "Edge AI", "Mobile Computing", "Sensor Networks", "Autonomous and Intelligent Systems", "Cryptography", "Network Security", "Information Security", "Cybersecurity", "Convergence in Digital Security", "Blockchain Technology", "Bioinformatics", "Computational Biology", "Computational Genomics", "Biomedical Informatics", "Computational Neuroscience", "Software Engineering", "Advanced Computing", "Computing Technologies", "Innovation and Technology Integration", "Digital Transformation"
+      ].sort()
     },
     {
       id: "B",
       title: "Smart Electronics & Communication Engineering",
       topics: [
-        "5G/6G Communication", "Wireless & Mobile Communication", "Antennas & Propagation", "Smart AntennaSystems", "MIMO Systems", "RF & Microwave", "RADAR", "Signal Processing", "Image & Video Processing", "Biomedical Image & Signal Processing", "Medical Electronics", "Embedded Systems", "VLSI & Microelectronics", "FPGA Design", "MEMS and NEMS", "IoT", "Cognitive Radio", "Error Control and Coding", "Communication & Security", "Computer Networks", "Brain–Computer Interfacing", "Bioinspired Systems & Instrumentation", "Biomedical Engineering", "Biomedical Control", "Process Instrumentation", "Process Control", "Nonlinear Dynamic Modeling", "Healthcare Technologies", "Optoelectronics", "Solid State Devices & Nanotechnology", "Analog Electronic Circuits", "Robotics & Automation", "Visible Light Communications", "Terahertz & Millimeter Wave Systems", "Reconfigurable Intelligent Surfaces", "SoftwareDefined Radio", "Optical Wireless Communications", "Edge AI for Sensors", "Wearable & Implantable Electronics", "WirelessBody Area Networks", "LabonChip & PointofCare Diagnostics", "Digital Health & Telemedicine", "Biomaterials & Tissue Engineering."
-      ]
+        "5G/6G Communication", "Wireless & Mobile Communication", "Antennas & Propagation", "Smart AntennaSystems", "MIMO Systems", "RF & Microwave", "RADAR", "Signal Processing", "Image & Video Processing", "Biomedical Image & Signal Processing", "Medical Electronics", "Embedded Systems", "VLSI & Microelectronics", "FPGA Design", "MEMS and NEMS", "IoT", "Cognitive Radio", "Error Control and Coding", "Communication & Security", "Computer Networks", "Brain–Computer Interfacing", "Bioinspired Systems & Instrumentation", "Biomedical Engineering", "Biomedical Control", "Process Instrumentation", "Process Control", "Nonlinear Dynamic Modeling", "Healthcare Technologies", "Optoelectronics", "Solid State Devices & Nanotechnology", "Analog Electronic Circuits", "Robotics & Automation", "Visible Light Communications", "Terahertz & Millimeter Wave Systems", "Reconfigurable Intelligent Surfaces", "Software Defined Radio", "Optical Wireless Communications", "Edge AI for Sensors", "Wearable & Implantable Electronics", "Wireless Body Area Networks", "Labon Chip & Point-of-Care Diagnostics", "Digital Health & Telemedicine", "Biomaterials & Tissue Engineering."
+      ].sort()
     },
     {
       id: "C",
       title: "Electrical Infrastructure and Automation",
       topics: [
-        "Power Electronics", "Electric Vehicles and Charging Infrastructure", "Smart Grid", "Micro Grid", "Renewableand Green Energy Systems", "Energy Storage Systems", "Power Quality Issues and Solutions", "PowerControllers and Conversion Topologies", "AC/DC Drives", "Industrial Motor Drives", "Switchgear and Protection", "Electrical Machines and Retrofitting", "Intelligent and Nonlinear Control", "Applications of Control Theory", "Process Control and Automation", "Industrial Measurement Techniques", "Fault Estimationand Monitoring using AI/ML", "Big Data and AI in Energy Conversion", "Sustainable and Green Automation Technologies", "Integration of Multiple Energy Sources", "Soft Switching Techniques", "ElectromagneticDevice Design", "Aerospace and Shipboard Energy Conversion Systems", "Factory Automation", "RemoteSensing and GIS", "Fuzzy Neural Systems."
-      ]
+        "Power Electronics", "Electric Vehicles and Charging Infrastructure", "Smart Grid", "Micro Grid", "Renewable and Green Energy Systems", "Energy Storage Systems", "Power Quality Issues and Solutions", "Power Controllers and Conversion Topologies", "AC/DC Drives", "Industrial Motor Drives", "Switchgear and Protection", "Electrical Machines and Retrofitting", "Intelligent and Nonlinear Control", "Applications of Control Theory", "Process Control and Automation", "Industrial Measurement Techniques", "Fault Estimationand Monitoring using AI/ML", "Big Data and AI in Energy Conversion", "Sustainable and Green Automation Technologies", "Integration of Multiple Energy Sources", "Soft Switching Techniques", "Electromagnetic Device Design", "Aerospace and Shipboard Energy Conversion Systems", "Factory Automation", "Remote Sensing and GIS", "Fuzzy Neural Systems."
+      ].sort()
     },
     {
       id: "D",
       title: "Interdisciplinary Science and Engineering",
       topics: [
-        "Energy Technologies", "Climate Change Mitigation", "Smart Cities", "Sustainable Infrastructure", "GreenBuilding Technology", "Advanced Materials", "Structural Health Monitoring", "Additive Manufacturing", "Mechatronics", "Applied Science and Mathematics", "Environmental Engineering", "ComputationalMaterials Science", "BioInspired Engineering", "Autonomous Systems", "Smart Manufacturing", "Human–Environment Interaction", "Resilient Infrastructure Systems. Sustainable Engineering &Project Management", "Humanitarian Technology Management", "Ethical Technology Deployment", "ProgramManagement and Innovation"
-      ]
+        "Energy Technologies", "Climate Change Mitigation", "Smart Cities", "Sustainable Infrastructure", "GreenBuilding Technology", "Advanced Materials", "Structural Health Monitoring", "Additive Manufacturing", "Mechatronics", "Applied Science and Mathematics", "Environmental Engineering", "Computational Materials Science", "BioInspired Engineering", "Autonomous Systems", "Smart Manufacturing", "Human–Environment Interaction", "Resilient Infrastructure Systems", "Sustainable Engineering & Project Management", "Humanitarian Technology Management", "Ethical Technology Deployment", "Program Management and Innovation"
+      ].sort()
     }
   ];
 

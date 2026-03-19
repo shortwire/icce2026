@@ -7,20 +7,21 @@ import { AdvisoryCommittee, OrganizingCommittee } from './pages/Committees'
 import { About } from './pages/About'
 import { Advisory } from './pages/Advisory'
 import { Organizing } from './pages/Organizing'
-import { OtherCommittees } from './pages/OtherCommittees'
-import { Publication } from './pages/Publication'
 import { TPC } from './pages/TPC'
-import { CallForPapers, ImportantDates } from './pages/Authors'
+import { CallForPapers } from './pages/cfp'
 import Submission from './pages/Paper_Submission'
+import ImportantDates from './pages/ImportantDates'
 import Topics from './pages/Topics'
 import { SupportToStudents } from './pages/SupportToStudents'
+import { ImportantInformation } from './pages/ImportantInformation'
 import { Registration } from './pages/Registration'
 import Contact from './pages/Contact'
-import { RegistrationFees } from './pages/Fees'
 import Venue from './pages/Venue'
 import ComingSoon from './pages/ComingSoon'
 import AboutNSEC from './pages/AboutNSEC'
 import AboutKolkata from './pages/AboutKolkata'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -43,30 +44,28 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/advisory" element={<Advisory />} />
             <Route path="/organising" element={<Organizing />} />
-            <Route path="/cfp" element={<ComingSoon />} />
+            <Route path="/cfp" element={<CallForPapers />} />
             <Route path="/topics" element={<Topics />} />
-            <Route path="/dates" element={<ComingSoon />} />
+            <Route path="/dates" element={<ImportantDates />} />
             <Route path="/submission" element={<Submission />} />
-            <Route path="/registration" element={<ComingSoon />} />
-            <Route path="/fees" element={<RegistrationFees />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/fees" element={<Registration />} />
             <Route path="/venue" element={<ComingSoon />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about-nsec" element={<AboutNSEC />} />
             <Route path="/about-kolkata" element={<AboutKolkata />} />
             <Route path="/tpc" element={<TPC />} />
-            <Route path="/publication" element={<Publication />} />
-            <Route path="/other-committees" element={<OtherCommittees />} />
             <Route path="/template" element={<ComingSoon />} />
-            <Route path="/guidelines" element={<ComingSoon />} />
             <Route path="/program" element={<ComingSoon />} />
             <Route path="/keynotes" element={<ComingSoon />} />
             <Route path="/special-sessions" element={<ComingSoon />} />
             <Route path="/workshop" element={<ComingSoon />} />
             <Route path="/tutorials" element={<ComingSoon />} />
-            <Route path="/imp-info" element={<ComingSoon />} />
+            <Route path="/imp-info" element={<Registration />} />
             <Route path="/accommodation" element={<ComingSoon />} />
             <Route path="/visa" element={<ComingSoon />} />
-            <Route path="/ieee" element={<ComingSoon />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/partners" element={<ComingSoon />} />
             <Route path="/sponsors" element={<ComingSoon />} />
             <Route path="/sponsor-opp" element={<ComingSoon />} />

@@ -37,11 +37,9 @@ const Header = () => {
     { 
       name: 'COMMITTEES', 
       dropdown: [
-        { name: 'Advisory Committee', path: '/advisory' },
         { name: 'Organising Committee', path: '/organising' },
         { name: 'Technical Committee', path: '/tpc' },
-        { name: 'Publication Committee', path: '/publication' },
-        { name: 'All Other Committees', path: '/other-committees' },
+        { name: 'Advisory Committee', path: '/advisory' },
       ]
     },
     { 
@@ -49,11 +47,12 @@ const Header = () => {
       dropdown: [
         { name: 'Important Dates', path: '/dates' },
         { name: 'Call for Papers', path: '/cfp' },
-        { name: 'Paper Template', path: '/template' },
-        { name: 'Submission Guidelines', path: '/guidelines' },
         { name: 'Paper Submission', path: '/submission' },
-        { name: 'Support to Students', path: '/students' },
       ]
+    },
+    { 
+      name: 'REGISTRATION', 
+      path: '/registration'
     },
     { 
       name: 'PROGRAM', 
@@ -66,61 +65,41 @@ const Header = () => {
       ]
     },
     { 
-      name: 'REGISTRATION', 
+      name: 'WIE/YP/SA', 
       dropdown: [
-        { name: 'Registration to ICCE 2026', path: '/registration' },
-        { name: 'Important Information', path: '/imp-info' },
-        { name: 'Registration Fees', path: '/fees' },
-        { name: 'Accommodation', path: '/accommodation' },
-        { name: 'Visa', path: '/visa' },
+        { name: 'WIE', path: '/special-sessions' },
+        { name: 'Young Professional', path: '/special-sessions' },
+        { name: 'Support to Students', path: '/students' },
       ]
     },
     { 
       name: 'PARTNERS', 
       dropdown: [
-        { name: 'IEEE Chapters', path: '/ieee' },
-        { name: 'Industry Partners', path: '/partners' },
         { name: 'Sponsors', path: '/sponsors' },
         { name: 'Sponsor Opportunity', path: '/sponsor-opp' },
+        { name: 'Industry Partners', path: '/partners' },
       ]
     },
-    { name: 'VENUE', path: '/venue' },
   ];
 
   const livePaths = [
-    '/', '/about', '/about-nsec', '/about-kolkata', '/topics', '/advisory', '/organising', '/tpc', '/publication', '/other-committees', '/submission', '/students', '/fees', '/contact'
+    '/', '/about', '/about-nsec', '/about-kolkata', '/topics', '/advisory', '/organising', '/tpc', '/submission', '/students', '/contact', '/dates', '/cfp'
   ];
 
   return (
     <header className="w-full sticky top-0 z-50 flex flex-col font-sans bg-white shadow-sm">
       {/* 0. STICKY NOTIFICATION BAR */}
-      <div className="w-full bg-ieee-blue text-white py-1.5 overflow-hidden sticky top-0 z-[60]">
+      <div className="w-full bg-icce-blue text-white py-1.5 overflow-hidden sticky top-0 z-[60]">
         <div className="container-boxed flex justify-center items-center px-4">
-          <div className="flex items-center space-x-3 animate-pulse">
-            <ShieldCheck size={14} className="text-white" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">
+          <div className="flex items-center space-x-3 animate-soft-pulse">
+            <ShieldCheck size={14} className="text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap text-yellow-400 drop-shadow-[0_0_5px_rgba(250,204,21,0.2)]">
               Deadline Reminder: Paper Submission Closes July 15, 2026
             </span>
-            <Link to="/submission" className="bg-white text-ieee-blue px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest hover:bg-slate-100 transition-all">
+            <Link to="/submission" className="bg-yellow-400 text-icce-blue px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest hover:bg-yellow-500 transition-all shadow-[0_0_15px_rgba(250,204,21,0.3)]">
               Submit Now
             </Link>
           </div>
-        </div>
-      </div>
-
-      {/* 1. SUBTLE TOP UTILITY BAR (Very compact) */}
-      <div className="w-full bg-[#f8f9fa] border-b border-gray-100 py-1 text-[9px] text-gray-400 font-bold uppercase tracking-widest">
-        <div className="max-w-[1400px] mx-auto flex justify-center md:justify-start items-center space-x-4 px-4">
-          <a href="https://www.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE.org</a>
-          <span className="text-gray-200">|</span>
-          <a href="https://ieeexplore.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE <i>Xplore</i></a>
-          <span className="text-gray-200">|</span>
-          <a href="https://standards.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE Standards</a>
-          <span className="text-gray-200">|</span>
-          <a href="https://spectrum.ieee.org" className="hover:text-ieee-blue transition-colors">IEEE Spectrum</a>
-          <span className="text-gray-200">|</span>
-          <a href="http://www.ieee.org/sitemap.html?WT.mc_id=mn_smap" className="hover:text-ieee-blue transition-colors">More Sites</a>
-
         </div>
       </div>
 
@@ -133,30 +112,33 @@ const Header = () => {
               <img src="/assets/logos/icce2026-logo-FINAL_red.png?v=1.0.1" alt="ICCE 2026" className="h-14 md:h-16" />
             </Link>
             <div className="border-l border-slate-100 pl-4 md:pl-6">
-              <h1 className="text-lg md:text-xl lg:text-[22px] font-black text-icce-blue tracking-tighter leading-none uppercase font-heading">
+              <h1 className="text-base md:text-lg lg:text-xl font-black text-icce-blue tracking-tighter leading-tight uppercase font-heading">
                 2nd International Conference for<br className="hidden md:block"/> Convergence in Engineering
               </h1>
+              <p className="text-sm md:text-base font-black text-[#800000] uppercase tracking-wider mt-1 leading-none">
+                Netaji Subhash Engineering College
+              </p>
 
             </div>
           </div>
 
           {/* Partner Logos Horizontal Array (Aligned precisely to image) */}
-          <div className="flex items-center space-x-2 shrink-0 h-11 md:h-14">
-             <div className="h-full flex items-center justify-center p-1">
+          <div className="flex items-center space-x-2 shrink-0 h-14 md:h-16">
+             <div className="h-full flex items-center justify-center">
                 <img src="/assets/logos/ieee-ap-mtt.png?v=1.0.1" alt="IEEE AP-MTT" className="max-h-full w-auto object-contain" />
              </div>
-             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
-             <div className="h-full flex items-center justify-center p-1">
+             <div className="h-10 md:h-12 w-px bg-slate-100 mx-1"></div>
+             <div className="h-full flex items-center justify-center">
                 <img src="/assets/logos/IEEE_Kolkata_Section_logo.png?v=1.0.1" alt="IEEE Kolkata Section" className="max-h-full w-auto object-contain" />
              </div>
-             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
-             <div className="h-full flex items-center justify-center p-1">
+             <div className="h-10 md:h-12 w-px bg-slate-100 mx-1"></div>
+             <div className="h-full flex items-center justify-center">
                 <img src="/assets/logos/iqac.png?v=1.0.1" alt="IQAC NSEC" className="max-h-full w-auto object-contain" />
              </div>
-             <div className="h-6 md:h-8 w-px bg-slate-100"></div>
+             <div className="h-10 md:h-12 w-px bg-slate-100 mx-1"></div>
              
              {/* New Combined TIG Logo Image */}
-             <div className="h-full flex items-center justify-center p-1">
+             <div className="h-full flex items-center justify-center">
                 <img src="/assets/logos/nsec.png?v=1.0.1" alt="TIG & NSEC Initiative" className="max-h-full w-auto object-contain" />
              </div>
           </div>

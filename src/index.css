@@ -43,6 +43,15 @@
   }
 }
 
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; filter: brightness(1.2); }
+  50% { opacity: 0.85; filter: brightness(0.9); }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .stroke-text {
   -webkit-text-stroke: 1.5px #191961;
   color: transparent;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Users, 
   GraduationCap, 
@@ -12,21 +12,99 @@ import {
   ShieldCheck,
   Zap,
   Layout,
-  Target
+  Target,
+  ChevronRight
 } from 'lucide-react';
 
 const Organizing = () => {
+  const [activeTab, setActiveTab] = useState(-1);
+
+  const committees = [
+    {
+      id: "publication",
+      title: "Publication Committee",
+      chair: "Anupam Ghosh",
+      members: ["Moujhuri Patra", "Sourav Chandra", "Ratul Chowdhury", "Jit Karmakar", "Prasun Sanki", "Amrendra Kumar", "Namrata Choudhury"]
+    },
+    {
+      id: "finance",
+      title: "Finance Committee",
+      chair: "Tridibesh Nag",
+      members: ["Arnab Bandopadhyay", "Manideepa Pal", "Susanta Mukherjee", "Payel Das", "Sayantee Gangopadhyay", "D Bose"]
+    },
+    {
+      id: "sponsorship",
+      title: "Sponsorship & Industry Forum",
+      chair: "Soumava Goswami",
+      members: ["Tridibesh Nag", "Sayantee Gangopadhyay"]
+    },
+    {
+      id: "program",
+      title: "Program Committee",
+      chair: "Chandan Banerjee",
+      members: ["Nivedita Ray", "Supratim Ghosh", "Swatilekha Das", "Arnab Hazra", "Surajit Chakraborty"]
+    },
+    {
+      id: "publicity",
+      title: "Publicity Committee",
+      chair: "Atanu Das",
+      members: ["Swapna Roy", "Somashree Bhadra", "Soumi Ghosh", "Amrita De", "Paramita Bhattacharya", "Angshuman Sahu", "Ritayan Chatterjee", "Srijita Bhoumik"]
+    },
+    {
+      id: "registration",
+      title: "Registration Committee",
+      chair: "Sabyasachi Bagchi",
+      members: ["Dip Kumar Saha", "Priya Roy Karmakar", "Sourav Dutta", "Soma Chattopadhyay", "Deepashree Dhar", "Subrata Datta", "Anupam Maity", "Lipika Das", "Swati Chakraborty"]
+    },
+    {
+      id: "hospitality",
+      title: "Hospitality Committee",
+      chair: "Indranil Ghosh",
+      members: ["Soumava Goswami", "Tridibesh Nag", "Dhritiman Mandal", "Debarshi Dutta", "Sumana Chatterjee", "Sindura Gupta", "Abira Choudhury", "Sumanta Dey", "Sumit Dhar", "Sayan Mondal", "Reshmi Saha", "Amit Nandy"]
+    },
+    {
+      id: "talks",
+      title: "Invited Talks and Tutorials",
+      chair: "Partha Ghosh",
+      members: ["Sujan Krishna Samanta", "Bijoy Kantha", "Aparajita Datta Sinha"]
+    },
+    {
+      id: "student",
+      title: "Student Activity",
+      chair: "Samir Kr. Ghosh",
+      members: ["Arnab Dutta", "Narayan Chandra Biswas", "Sumitesh Majumder", "Sourav Mitra", "Natasha Ghosh", "Ashis Kar"]
+    },
+    {
+      id: "wie",
+      title: "WIE Activity",
+      chair: "Riya Majumder",
+      members: ["Priyadarshini Dhar", "Anindita Sarkar", "Silpi Sarkar"]
+    },
+    {
+      id: "sight",
+      title: "SIGHT Activity",
+      chair: "Abhishek Saha",
+      members: ["Niladri Shekhar Mishra", "Piyali Bagchi Khatua", "Sukanta Bose"]
+    },
+    {
+      id: "web",
+      title: "Web Committee",
+      chair: "Partha Sarathi Pal",
+      members: ["Kallol Bhattacharya", "Sandip Sadhukhan", "Sayantan Dass", "Biswajit Acharya", "Srijita Bhoumik"]
+    }
+  ];
+
   const committeeSections = [
     {
       title: "Patrons",
       members: [
         { name: "Satyam Roy Chowdhury", role: "Chief Patron", affiliation: "Chancellor, SNU & MD, TIG" },
         { name: "Dhrubajyoti Chattopadhyay", role: "Patron", affiliation: "Vice Chancellor, SNU" },
-        { name: "Arindam Ray", role: "Patron", affiliation: "Director, NSEC" },
+        { name: "Arindam Ray", role: "Patron", affiliation: "Sr Director, TIG & Member, BoG" },
       ]
     },
     {
-      title: "Core Organizing Team",
+      title: "Organizing Team",
       members: [
         { name: "Amal Kr. Ghosh", role: "General Chair" },
         { name: "Sukumar Roy", role: "General Co-Chair" },
@@ -37,7 +115,7 @@ const Organizing = () => {
         { name: "Soumava Goswami", role: "Sponsorship & Industry Forum Chair" },
         { name: "Koushik Dutta", role: "Technical Program Committee Chair" },
         { name: "Chandan Banerjee", role: "Program Chair" },
-        { name: "Anupam Ghosh", role: "Publication Committee Chair" },
+        { name: "Anupam Ghosh", role: "Publication Chair" },
         { name: "Atanu Das", role: "Publicity Chair" },
         { name: "Sabyasachi Bagchi", role: "Registration Chair" },
         { name: "Indranil Ghosh", role: "Hospitality Chair" },
@@ -45,7 +123,7 @@ const Organizing = () => {
         { name: "Samir Kr. Ghosh", role: "Student Activity Chair" },
         { name: "Riya Majumder", role: "WIE Activity Chair" },
         { name: "Abhishek Saha", role: "SIGHT Activity Chair" },
-        { name: "Partha Sarathi Pal", role: "Web Committee Chair" },
+        { name: "Partha Sarathi Pal", role: "Web Chair" },
       ]
     }
   ];
@@ -53,11 +131,10 @@ const Organizing = () => {
   const statistics = [
     { label: "Patrons", count: "3", icon: Target },
     { label: "General Chairs", count: "2", icon: Award },
-    { label: "Core Chairs", count: "16", icon: Layout },
-    { label: "Total Leadership", count: "21", icon: Users },
+    { label: "Core Team", count: "16", icon: Layout },
     { label: "Strategic Units", count: "12", icon: ShieldCheck },
-    { label: "Industry Liaison", count: "Active", icon: Briefcase },
-    { label: "Execution Standard", count: "100%", icon: Zap }
+    { label: "Total Members", count: "101", icon: Users },
+    { label: "Industry Sync", count: "Active", icon: Briefcase }
   ];
 
   return (
@@ -131,6 +208,60 @@ const Organizing = () => {
                   </div>
                 </div>
               ))}
+
+              <div className="mt-12">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-lg font-black text-icce-blue uppercase tracking-tight">Other Committees</h2>
+                  <div className="h-px flex-1 bg-slate-100"></div>
+                </div>
+                
+                <div className="space-y-4">
+                  {committees.map((comm, idx) => (
+                    <div key={comm.id} className="border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <button
+                        onClick={() => setActiveTab(activeTab === idx ? -1 : idx)}
+                        className={`w-full text-left px-6 py-5 flex items-center justify-between transition-all group relative border-l-4 ${activeTab === idx ? 'bg-icce-blue text-white border-yellow-400' : 'bg-white text-icce-blue hover:bg-slate-50 border-transparent hover:border-yellow-400/50'}`}
+                      >
+                        <span className="text-[13px] font-black uppercase tracking-widest">{comm.title}</span>
+                        <ChevronRight size={18} className={`transition-transform duration-300 ${activeTab === idx ? 'rotate-90 text-yellow-400' : 'text-yellow-500'}`} />
+                      </button>
+
+                      <AnimatePresence>
+                        {activeTab === idx && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="bg-slate-50/50"
+                          >
+                            <div className="p-8 space-y-8 border-t border-slate-100">
+                              <div className="space-y-6">
+                                <div className="flex flex-col gap-1">
+                                  <span className={`text-[10px] font-black uppercase tracking-widest ${activeTab === idx ? 'text-ieee-blue' : 'text-slate-600'}`}>Chairperson</span>
+                                  <div className="text-xl font-black text-icce-blue uppercase tracking-tight">{comm.chair}</div>
+                                </div>
+
+                                <div className="space-y-3">
+                                  <span className={`text-[10px] font-black uppercase tracking-widest ${activeTab === idx ? 'text-ieee-blue' : 'text-slate-600'}`}>Committee Members</span>
+                                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+                                    {comm.members.map((member, i) => (
+                                      <div key={i} className="flex items-center gap-2 p-3 bg-white rounded-xl border border-slate-100 group/member hover:border-yellow-400/50 transition-colors shadow-sm">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0"></div>
+                                        <span className="text-[11px] font-bold text-slate-600 uppercase tracking-tight">{member}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
+              </div>
            </div>
 
            {/* RIGHT: Sidebar */}
